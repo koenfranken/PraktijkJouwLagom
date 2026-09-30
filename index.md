@@ -55,14 +55,18 @@ Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 ### Begeleiding
 In vervolgconsulten kijken we wat werkt en stellen we het plan bij.
 
-[rij verhouding=1:2]
-[sectie patroon=images/water.svg patroonkleur=geel]
+[rij]
+[sectie thema=geel]
 [label Agenda]
+## Plan een afspraak
 
-[sectie]
+[sectie thema=geel patroon=images/water.svg]
 Hier moet de agenda getoond / geladen worden
 
-[rij verhouding=3:2]
+[rij verhouding=1:2]
+[sectie thema=groen]
+![Portret](images/portret.svg)
+
 [sectie]
 [label Over mij]
 ## Aandacht voor het geheel
@@ -73,9 +77,6 @@ Beschrijf je aanpak: hoe werk je samen met cliënten, en wat mogen ze van je ver
 - Persoonlijke aandacht
 - Een plan dat past bij jouw leven
 - **Niet te veel, niet te weinig**
-
-[sectie thema=groen uitlijning=midden]
-![Portret](images/portret.svg)
 
 [rij]
 [sectie thema=rood patroon=images/stippen.svg]
