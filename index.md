@@ -9,7 +9,7 @@ Orthomoleculaire therapie kijkt naar wat jouw lichaam nodig heeft: voeding, vita
 [Plan een kennismaking](#contact)
 [Zo werk ik](#werkwijze)
 
-[sectie achtergrond=olijf]
+[sectie achtergrond=olijf uitlijning=onder]
 > **lagom** *(Zweeds)*: precies genoeg; niet te veel, niet te weinig.
 
 Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en iedereen nam net genoeg, zodat er voor iedereen was.
