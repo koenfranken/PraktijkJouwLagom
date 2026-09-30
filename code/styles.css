@@ -10,7 +10,7 @@
     --breedte: 1200px;                          /* maximale breedte van de inhoud */
     --marge: 1.25rem;                           /* minimale ruimte tot de schermrand */
     --tussenruimte: clamp(1.5rem, 3vw, 2.5rem); /* ruimte tussen twee secties naast elkaar (per kant) */
-    --ruimte: clamp(4rem, 9vw, 6.5rem);         /* ruimte boven en onder een sectie */
+    --ruimte: clamp(2rem, 4.5vw, 3.25rem);      /* ruimte boven en onder een sectie */
     --menu-h: 72px;
     --rond: 12px;
 
@@ -77,7 +77,7 @@ main, .footer { overflow-x: clip; }   /* achtergronden lopen door tot de rand; n
 }
 .twee > .sectie:first-child { padding-right: var(--tussenruimte); clip-path: inset(0 -1px -1px -100vmax); }
 .twee > .sectie:last-child { padding-left: var(--tussenruimte); clip-path: inset(0 -100vmax -1px 0); }
-main > .rij:first-child .sectie { padding-top: calc(var(--menu-h) + var(--ruimte) * .75); }
+main > .rij:first-child .sectie { padding-top: calc(var(--menu-h) + var(--ruimte) * 1.5); }
 
 /* Patroon: het bestand dient als sjabloon (mask), de kleur komt uit --patroonkleur.
    Voor schaal= wordt de laag kleiner gemaakt en daarna weer uitvergroot.
@@ -148,7 +148,7 @@ a.knop { display: inline-block; background: var(--accent); color: var(--knopteks
 }
 .kaart > * + * { margin-top: .6rem; }
 
-.tijdlijn { padding: 0; list-style: none; border-left: 2px solid color-mix(in srgb, var(--tekst) 15%, transparent); }
+.tijdlijn { padding: 0; list-style: none; }
 .tijdlijn > li { position: relative; padding: 0 0 2.5rem 2rem; }
 .tijdlijn > li:last-child { padding-bottom: 0; }
 .tijdlijn > li::before {
@@ -161,6 +161,16 @@ a.knop { display: inline-block; background: var(--accent); color: var(--knopteks
     border: 2px solid var(--accent);
     border-radius: 50%;
     background: var(--achtergrond);
+}
+/* Lijn van de onderkant van een stip tot de bovenkant van de volgende */
+.tijdlijn > li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: calc(.35rem + 12px);
+    bottom: -.35rem;
+    width: 2px;
+    background: color-mix(in srgb, var(--tekst) 15%, transparent);
 }
 .tijdlijn > li > * + * { margin-top: .4rem; }
 .periode { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
