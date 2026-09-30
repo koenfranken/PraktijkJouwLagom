@@ -119,9 +119,11 @@ function leesOpties(tekst) {
 // Zet een reeks regels om naar HTML. Regels die bij elkaar horen (een alinea, een lijst,
 // een rij knoppen) worden eerst verzameld in een "open blok" en samen omgezet.
 // Een lege regel sluit het open blok af.
+// Tussen [html] en [/html] staat gewone HTML; die gaat ongewijzigd door, lege regels ook.
 function markdownNaarHtml(regels, basis) {
     const html = [];
     let open = null;
+    let inHtml = false;
 
     const sluitBlok = () => {
         if (open) html.push(blokNaarHtml(open, basis));
@@ -143,7 +145,15 @@ function markdownNaarHtml(regels, basis) {
         const citaat = regel.match(/^>\s?(.*)$/);                // > citaat
         const knop = /^\[[^\]]+\]\([^)]+\)\{\.knop\}$/.test(regel);  // alleen [tekst](adres){.knop} op de regel
 
-        if (regel === '') {
+        if (regel === '[html]') {
+            sluitBlok();
+            inHtml = true;
+        } else if (regel === '[/html]') {
+            sluitBlok();
+            inHtml = false;
+        } else if (inHtml) {
+            voegToeAanBlok('html', regel);
+        } else if (regel === '') {
             sluitBlok();
         } else if (kop) {
             sluitBlok();
@@ -176,6 +186,7 @@ function blokNaarHtml({ soort, regels }, basis) {
         case 'ul': return `<ul>${lijstItems()}</ul>`;
         case 'ol': return `<ol>${lijstItems()}</ol>`;
         case 'blockquote': return `<blockquote><p>${doorlopend}</p></blockquote>`;
+        case 'html': return regels.join('\n');
         case 'knoppen': return `<p class="knoppen">${regels.map(r => opmaak(r, basis)).join('')}</p>`;
         default: return `<p>${doorlopend}</p>`;
     }
@@ -409,6 +420,17 @@ function controleerPlakken() {
     });
 }
 
+// Een <script> dat via innerHTML op de pagina komt, voert de browser niet uit.
+// Daarom elk script uit een [html]-blok vervangen door een nieuw exemplaar; dat wordt wel uitgevoerd.
+function voerScriptsUit() {
+    document.querySelectorAll('main script, footer script').forEach(oud => {
+        const nieuw = document.createElement('script');
+        for (const { name, value } of oud.attributes) nieuw.setAttribute(name, value);
+        nieuw.textContent = oud.textContent;
+        oud.replaceWith(nieuw);
+    });
+}
+
 // Links naar een andere website openen in een nieuw tabblad.
 function openExterneLinksApart() {
     document.querySelectorAll('a[href^="http"]').forEach(a => {
@@ -482,6 +504,7 @@ async function laadTekst(adres) {
         if (footer) document.body.append(maakFooter(footer, stijl));
 
         maakAnkers();
+        voerScriptsUit();
         openExterneLinksApart();
         activeerMenu();
     } catch (fout) {

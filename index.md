@@ -61,7 +61,19 @@ In vervolgconsulten kijken we wat werkt en stellen we het plan bij.
 ## Plan een afspraak
 
 [sectie thema=geel]
-Hier moet de agenda getoond / geladen worden
+[html]
+<div class="md-scheduler" data-env="praktijkjouwlagom" data-language="nl"></div>
+<script>
+(function(doc, tag, id){
+    var js = doc.getElementsByTagName(tag)[0];
+    if (doc.getElementById(id)) {return;}
+    js = doc.createElement(tag);js.id = id;
+    js.src = "https://public.mijndiad.nl/widgets/scheduler.js";
+    js.type = "text/javascript";
+    doc.body.appendChild(js);
+}(document, 'script', 'md-scheduler-script'));
+</script>
+[/html]
 
 [rij verhouding=1:2]
 [sectie patroon=images/lagom.svg patroonkleur=groen]

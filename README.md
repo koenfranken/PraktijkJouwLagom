@@ -101,6 +101,7 @@ De footer bestaat uit gewone rijen en secties (zie hieronder), alleen met minder
 | `[label Diensten]` | Klein label boven een kop |
 | `[kaart]` | Tegel. Zonder lege regel vóór de volgende `[kaart]` staan ze naast elkaar, met een lege regel onder elkaar. Op mobiel altijd onder elkaar |
 | `[tijdlijn 2020 – heden]` | Item in een tijdlijn |
+| `[html]` … `[/html]` | Gewone HTML, bijvoorbeeld een agenda of formulier van een andere website. Beide markeringen alleen op een regel. Scripts erin worden uitgevoerd |
 
 Een kaart of tijdlijn-item loopt door tot de volgende `[markering]`. Een lege regel begint een nieuwe alinea.
 
