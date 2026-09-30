@@ -56,6 +56,7 @@ knoptekst: donker
 [menu]
 - [Aanbod](./#aanbod)
 - [Werkwijze](./#werkwijze)
+- [Afspraak maken](./#agenda)
 - [Over mij](./#over-mij)
 - [Contact](./#contact){.knop}
 
