@@ -1,6 +1,6 @@
-Homepagina. Voorbeeldtekst: vervang die door je eigen tekst.
+Homepagina
 
-[rij verhouding=3:2]
+[rij verhouding=4:1]
 [sectie patroon=images/stippen.svg patroonkleur=olijf]
 [label Orthomoleculaire therapie]
 # Precies genoeg, ==voor jou==.
