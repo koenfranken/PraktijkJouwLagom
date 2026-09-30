@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="72" viewBox="0 0 96 72">
+  <!-- De drie balken onder de zon in het logo (70, 44 en 18 breed), op 40% van de maat.
+       Twee per tegel, schuin tegenover elkaar: samen een dambord met veel lucht. -->
+  <defs>
+    <g id="balken">
+      <rect x="-14" y="-5" width="28" height="2" rx="1"/>
+      <rect x="-8.8" y="-1" width="17.6" height="2" rx="1"/>
+      <rect x="-3.6" y="3" width="7.2" height="2" rx="1"/>
+    </g>
+  </defs>
+  <g opacity=".25">
+    <use href="#balken" x="24" y="18"/>
+    <use href="#balken" x="72" y="54"/>
+  </g>
+</svg>

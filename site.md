@@ -57,7 +57,7 @@ knoptekst: donker
 - [Aanbod](./#aanbod)
 - [Werkwijze](./#werkwijze)
 - [Over mij](./#over-mij)
-- [Contact](./#contact)
+- [Contact](./#contact){.knop}
 
 [footer]
 [rij]

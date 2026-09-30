@@ -60,11 +60,11 @@ In vervolgconsulten kijken we wat werkt en stellen we het plan bij.
 [label Agenda]
 ## Plan een afspraak
 
-[sectie thema=geel patroon=images/water.svg]
+[sectie thema=geel]
 Hier moet de agenda getoond / geladen worden
 
 [rij verhouding=1:2]
-[sectie thema=groen]
+[sectie patroon=images/lagom.svg patroonkleur=groen]
 ![Portret](images/portret.svg)
 
 [sectie]

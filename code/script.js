@@ -141,7 +141,7 @@ function markdownNaarHtml(regels, basis) {
         const punt = regel.match(/^[-*]\s+(.+)$/);               // - opsommingsteken
         const nummer = regel.match(/^\d+[.)]\s+(.+)$/);          // 1. genummerd
         const citaat = regel.match(/^>\s?(.*)$/);                // > citaat
-        const knop = regel.match(/^(\[[^\]]+\]\([^)]+\))\{\.knop\}$/); // [tekst](adres){.knop}
+        const knop = /^\[[^\]]+\]\([^)]+\)\{\.knop\}$/.test(regel);  // alleen [tekst](adres){.knop} op de regel
 
         if (regel === '') {
             sluitBlok();
@@ -159,7 +159,7 @@ function markdownNaarHtml(regels, basis) {
         } else if (citaat) {
             voegToeAanBlok('blockquote', citaat[1]);
         } else if (knop) {
-            voegToeAanBlok('knoppen', knop[1]);
+            voegToeAanBlok('knoppen', regel);
         } else {
             voegToeAanBlok('p', regel);
         }
@@ -185,7 +185,8 @@ function blokNaarHtml({ soort, regels }, basis) {
 function opmaak(tekst, basis) {
     return ontsnap(tekst)
         .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, adres) => `<img src="${pad(adres, basis)}" alt="${alt}">`)
-        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, tekst, adres) => `<a href="${pad(adres, basis)}">${tekst}</a>`)
+        .replace(/\[([^\]]+)\]\(([^)\s]+)\)(\{\.knop\})?/g, (_, tekst, adres, knop) =>
+            `<a href="${pad(adres, basis)}"${knop ? ' class="knop"' : ''}>${tekst}</a>`)   // {.knop}: opgemaakt als knop
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.+?)\*/g, '<em>$1</em>')
         .replace(/==(.+?)==/g, '<mark>$1</mark>');

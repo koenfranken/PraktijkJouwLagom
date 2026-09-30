@@ -126,21 +126,17 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--accent); font: 
 }
 .label::before { content: ''; width: 1.5rem; height: 2px; background: currentColor; }
 
-/* Knoppen: de eerste in accentkleur, de volgende rustiger */
+/* Vorm van alle knoppen, en van de menu-items (die de vorm alleen bij hover laten zien) */
+a.knop, .menubalk nav a { padding: .45rem .9rem; border-radius: 6px; font-size: .95rem; text-decoration: none; }
+
+/* Knoppen ([tekst](adres){.knop}). Knoppen op opeenvolgende regels staan samen in .knoppen:
+   de eerste in accentkleur, de volgende rustiger. */
 .knoppen { display: flex; flex-wrap: wrap; gap: .75rem; }
-.knoppen a {
-    padding: .75rem 1.5rem;
-    border: 1.5px solid var(--accent);
-    border-radius: 99px;
-    background: var(--accent);
-    color: var(--knoptekst);
-    font-weight: 600;
-    text-decoration: none;
-    transition: filter .2s, background .2s;
-}
-.knoppen a:hover { filter: brightness(.92); }
-.knoppen a + a { background: transparent; color: var(--tekst); border-color: color-mix(in srgb, var(--tekst) 30%, transparent); }
-.knoppen a + a:hover { background: color-mix(in srgb, var(--tekst) 8%, transparent); }
+a.knop { display: inline-block; background: var(--accent); color: var(--knoptekst); font-weight: 600; transition: filter .2s, background .2s; }
+.knop:hover { filter: brightness(.92); }
+/* De rand van een rustige knop is een schaduw aan de binnenkant, zodat de maat gelijk blijft */
+.knoppen .knop + .knop { background: transparent; color: var(--tekst); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--tekst) 30%, transparent); }
+.knoppen .knop + .knop:hover { background: color-mix(in srgb, var(--tekst) 8%, transparent); }
 
 .kaarten { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
 .kaart {
@@ -185,8 +181,9 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--accent); font: 
 .merk { display: flex; align-items: center; gap: .75rem; font: 1.3rem var(--font-koppen), Georgia, serif; color: var(--koppen); text-decoration: none; }
 .merk img { height: 44px; width: auto; border-radius: 0; }
 .menubalk ul { display: flex; gap: .25rem; padding: 0; list-style: none; }
-.menubalk nav a { display: block; padding: .45rem .9rem; border-radius: 6px; font-size: .95rem; font-weight: 500; text-decoration: none; }
-.menubalk nav a:hover { background: color-mix(in srgb, var(--accent) 20%, transparent); }
+.menubalk nav a { display: block; font-weight: 500; }
+.menubalk nav a:not(.knop):hover { background: color-mix(in srgb, var(--accent) 20%, transparent); }
+.menubalk nav a.knop { margin-left: .5rem; font-weight: 600; }
 .menuknop { display: none; padding: .5rem; border: 0; background: none; cursor: pointer; }
 .menuknop span { display: block; width: 22px; height: 2px; margin: 5px 0; background: var(--tekst); transition: .3s; }
 .open .menuknop span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -237,4 +234,5 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--accent); font: 
     .menubalk nav { display: none; position: absolute; top: var(--menu-h); inset-inline: 0; padding: 1rem var(--marge); background: var(--achtergrond); border-bottom: 1px solid color-mix(in srgb, var(--tekst) 10%, transparent); }
     .menubalk.open nav { display: block; }
     .menubalk ul { flex-direction: column; }
+    .menubalk nav a.knop { display: inline-block; margin: .5rem 0 0; }
 }

@@ -48,6 +48,7 @@ Verplicht zijn `titel`, `thema`, `font-koppen` en `font-tekst`. Ontbreekt er é�
 [menu]
 - [Aanbod](./#aanbod)
 - [Voorwaarden](voorwaarden.html)
+- [Contact](./#contact){.knop}      ← als knop in de accentkleur
 
 [footer]
 [rij verhouding=2:1]
@@ -80,7 +81,7 @@ De footer bestaat uit gewone rijen en secties (zie hieronder), alleen met minder
 |---|---|
 | `thema=groen` | Kleuren uit `[thema groen]`; zonder thema geldt het thema uit `[site]` |
 | `achtergrond=`, `tekst=`, `koppen=`, `accent=`, `knoptekst=` | Eén rol van het thema overschrijven met een kleur uit `[kleuren]` |
-| `patroon=images/stippen.svg` | Herhaald patroon; het bestand bepaalt de vorm en doorzichtigheid. Aanwezig: `stippen`, `lijnen`, `zon`, `water`, `blad`, `kiezels`. Hetzelfde patroon in twee secties van een rij loopt naadloos door |
+| `patroon=images/stippen.svg` | Herhaald patroon; het bestand bepaalt de vorm en doorzichtigheid. Aanwezig: `stippen`, `lijnen`, `zon`, `water`, `blad`, `kiezels`, `lagom` (de balken uit het logo). Hetzelfde patroon in twee secties van een rij loopt naadloos door |
 | `patroonkleur=groen` | Kleur van het patroon (standaard de accentkleur) |
 | `schaal=2` | Patroon twee keer zo groot |
 | `uitlijning=midden` | Tekst verticaal `boven` (standaard), in het `midden` of `onder`; zichtbaar als de andere sectie in de rij hoger is |
