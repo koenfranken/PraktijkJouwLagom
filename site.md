@@ -1,23 +1,57 @@
 Instellingen voor de hele site. Een pagina kan elk van deze blokken zelf ook bevatten:
 bij [site] en [kleuren] vervangt de pagina alleen de regels die ze zelf noemt,
-bij [menu] en [footer] het hele blok. Deze tekst (vóór de eerste markering) wordt niet getoond.
+bij [thema …], [menu] en [footer] het hele blok. Deze tekst (vóór de eerste markering) wordt niet getoond.
 
 [site]
-naam: Jouw Lagom
+naam: Praktijk Jouw Lagom
 logo: images/logo.svg
-titel: Jouw Lagom · orthomoleculaire therapie
+titel: Praktijk Jouw Lagom · Orthomoleculaire therapie
 beschrijving: Orthomoleculaire therapie: voeding, suppletie en leefstijl die precies bij jou passen.
 font-koppen: Young Serif
 font-tekst: Instrument Sans
+thema: licht
 
 [kleuren]
-achtergrond: #F7F4EE
-tekst: #222020
-koppen: #7F1D1A
-accent: #D8A032
-olijf: #6F7D45
+donker: #222020
+licht: #F7F4EE
+groen: #6F7D45
 rood: #7F1D1A
-licht: #FFFFFF
+geel: #D8A032
+
+[thema licht]
+achtergrond: licht
+tekst: donker
+koppen: rood
+accent: geel
+knoptekst: licht
+
+[thema groen]
+achtergrond: groen
+tekst: licht
+koppen: licht
+accent: rood
+knoptekst: groen
+
+[thema geel]
+achtergrond: geel
+tekst: donker
+koppen: donker
+accent: rood
+knoptekst: licht
+
+[thema rood]
+achtergrond: rood
+tekst: licht
+koppen: licht
+accent: geel
+knoptekst: donker
+
+[thema donker]
+achtergrond: donker
+tekst: licht
+koppen: licht
+accent: geel
+knoptekst: donker
 
 [menu]
 - [Aanbod](./#aanbod)
@@ -26,6 +60,14 @@ licht: #FFFFFF
 - [Contact](./#contact)
 
 [footer]
-**Jouw Lagom** · orthomoleculaire therapie
+[rij]
+[sectie thema=rood]
+© 2026 **Praktijk Jouw Lagom**
 
-[a.b@c.com](mailto:a.b@c.com) · [Algemene voorwaarden](voorwaarden.html)
+Orthomoleculaire therapie 
+
+[sectie thema=rood]
+KvK nummer: TBD
+
+[Algemene voorwaarden](voorwaarden.html)
+

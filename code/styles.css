@@ -1,20 +1,12 @@
 /* ─── Instellingen ──────────────────────────────────────────
-   Kleuren en fonts komen uit site.md (als --kleur-… en --font-…).
-   De waarden hieronder zijn alleen een vangnet als ze daar ontbreken. */
+   Kleuren, thema's en fonts komen uit site.md. script.js zet ze als CSS-variabelen:
+     --kleur-groen, …                                 het palet uit [kleuren]
+     --achtergrond, --tekst, --koppen, --accent, --knoptekst
+                                                      de rollen uit het thema van de pagina,
+                                                      per sectie of footer overschreven
+     --font-koppen, --font-tekst
+   Ontbreekt er één, dan meldt de pagina dat. */
 :root {
-    --kleur-achtergrond: #fff;
-    --kleur-tekst: #222;
-    --kleur-koppen: var(--kleur-tekst);
-    --kleur-accent: #8a5a00;
-    --op-accent: #fff;
-    --font-koppen: Georgia;
-    --font-tekst: system-ui;
-
-    /* Kleuren binnen een sectie; een sectie met achtergrond= of tekst= overschrijft ze */
-    --vlak: var(--kleur-achtergrond);
-    --tekst: var(--kleur-tekst);
-    --koppen: var(--kleur-koppen);
-
     --breedte: 1200px;                          /* maximale breedte van de inhoud */
     --marge: 1.25rem;                           /* minimale ruimte tot de schermrand */
     --tussenruimte: clamp(1.5rem, 3vw, 2.5rem); /* ruimte tussen twee secties naast elkaar (per kant) */
@@ -23,11 +15,11 @@
     --rond: 12px;
 
     /* Animatie bij het laden en scrollen */
-    --fade: 5.5s;                            /* invagen van de hele pagina */
-    --reveal-duration: .8s;                 /* duur van de fade-in per blok */
-    --reveal-distance: 16px;                /* afstand die een blok omhoog schuift */
-    --reveal-stagger: .15s;                 /* vertraging tussen blokken naast elkaar */
-    --reveal-ease: cubic-bezier(.22, .61, .36, 1);
+    --fade: .5s;                           /* invagen van de hele pagina */
+    --reveal-duration: .5s;                 /* duur van de fade-in per blok */
+    --reveal-distance: 32px;                /* afstand die een blok omhoog schuift */
+    --reveal-stagger: .1s;                 /* tijd tussen het begin van twee blokken in een rij */
+    --reveal-ease: cubic-bezier(.16, 1, .3, 1); /* snel op gang, rustig tot stilstand */
     --font-wait: 1000;                      /* max. ms wachten op fonts (gelezen door script.js) */
 }
 
@@ -37,7 +29,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--menu-h) + 1rem); 
 body {
     font: 400 1.0625rem/1.7 var(--font-tekst), system-ui, sans-serif;
     color: var(--tekst);
-    background: var(--kleur-achtergrond);
+    background: var(--achtergrond);
     -webkit-font-smoothing: antialiased;
     transition: opacity var(--fade) var(--reveal-ease);
 }
@@ -58,39 +50,39 @@ h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
 h3 { font-size: 1.3rem; }
 h4 { font-size: 1.1rem; }
 strong { font-weight: 600; }
-mark { background: none; color: var(--kleur-accent); }
-a { color: inherit; text-decoration-color: var(--kleur-accent); text-decoration-thickness: 2px; text-underline-offset: .2em; }
+mark { background: none; color: var(--accent); }
+a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: .2em; }
 
 /* ─── Rijen en secties ──────────────────────────────────── */
-main { overflow-x: clip; }
+main, .footer { overflow-x: clip; }   /* achtergronden lopen door tot de rand; niet verder */
 .breedte, .rij { width: min(var(--breedte), 100% - 2 * var(--marge)); margin-inline: auto; }
-.rij { display: grid; }
+.rij { display: grid; position: relative; }   /* ankerpunt voor patronen, zie .patroon::before */
 .rij.twee { grid-template-columns: calc(var(--deel, .5) * 100%) 1fr; }
 
 .sectie {
-    position: relative;
     isolation: isolate;
     padding-block: var(--ruimte);
-    background: var(--vlak);
+    background: var(--achtergrond);
     color: var(--tekst);
     /* De achtergrond loopt door tot de schermrand: een schaduw van 100vmax breed in de
-       sectiekleur, die clip-path boven en onder afknipt (en bij twee secties aan de binnenkant). */
-    box-shadow: 0 0 0 100vmax var(--vlak);
-    clip-path: inset(0 -100vmax);
+       sectiekleur, die clip-path boven en onder afknipt (en bij twee secties aan de binnenkant).
+       Onder (en bij twee secties rechts) blijft 1px extra staan, zodat er tussen twee secties
+       geen naadje door afronding ontstaat; de volgende sectie ligt daaroverheen. */
+    box-shadow: 0 0 0 100vmax var(--achtergrond);
+    clip-path: inset(0 -100vmax -1px);
     /* uitlijning= zet de tekst boven, in het midden of onder in de sectie */
     display: flex;
     flex-direction: column;
     justify-content: var(--uitlijning, start);
 }
-.twee > .sectie:first-child { padding-right: var(--tussenruimte); clip-path: inset(0 0 0 -100vmax); }
-.twee > .sectie:last-child { padding-left: var(--tussenruimte); clip-path: inset(0 -100vmax 0 0); }
+.twee > .sectie:first-child { padding-right: var(--tussenruimte); clip-path: inset(0 -1px -1px -100vmax); }
+.twee > .sectie:last-child { padding-left: var(--tussenruimte); clip-path: inset(0 -100vmax -1px 0); }
 main > .rij:first-child .sectie { padding-top: calc(var(--menu-h) + var(--ruimte) * .75); }
 
-/* Op een donkere achtergrond (bepaald door script.js) wordt de tekst licht */
-.donker { --tekst: var(--kleur-achtergrond); --koppen: var(--kleur-achtergrond); }
-
 /* Patroon: het bestand dient als sjabloon (mask), de kleur komt uit --patroonkleur.
-   Voor schaal= wordt de laag kleiner gemaakt en daarna weer uitvergroot. */
+   Voor schaal= wordt de laag kleiner gemaakt en daarna weer uitvergroot.
+   De laag is geplaatst ten opzichte van de rij (niet de sectie), zodat hetzelfde patroon in
+   twee secties naast of onder elkaar naadloos doorloopt; clip-path van de sectie knipt hem af. */
 .patroon::before {
     content: '';
     position: absolute;
@@ -101,7 +93,7 @@ main > .rij:first-child .sectie { padding-top: calc(var(--menu-h) + var(--ruimte
     height: calc(100% / var(--schaal, 1));
     transform: scale(var(--schaal, 1));
     transform-origin: 0 0;
-    background: var(--patroonkleur, var(--tekst));
+    background: var(--patroonkleur, var(--accent));
     mask: var(--patroon);
 }
 
@@ -112,15 +104,15 @@ main > .rij:first-child .sectie { padding-top: calc(var(--menu-h) + var(--ruimte
 .inhoud > * + * { margin-top: 1.25rem; }
 .inhoud > .label + * { margin-top: .75rem; }
 .inhoud > :is(p, ul, ol, blockquote) { max-width: 65ch; }
-:is(h1, h2) + p { font-size: 1.15rem; color: color-mix(in srgb, var(--tekst) 78%, var(--vlak)); }
+:is(h1, h2) + p { font-size: 1.15rem; color: color-mix(in srgb, var(--tekst) 78%, var(--achtergrond)); }
 
 .inhoud ul { padding: 0; list-style: none; }
 .inhoud ul li { position: relative; padding-left: 1.5rem; }
-.inhoud ul li::before { content: ''; position: absolute; left: .2rem; top: .7em; width: .4rem; height: .4rem; border-radius: 50%; background: var(--kleur-accent); }
+.inhoud ul li::before { content: ''; position: absolute; left: .2rem; top: .7em; width: .4rem; height: .4rem; border-radius: 50%; background: var(--accent); }
 .inhoud ol { padding-left: 1.5rem; }
 .inhoud li + li { margin-top: .4rem; }
 
-blockquote { padding-left: 1.25rem; border-left: 2px solid var(--kleur-accent); font: 1.3rem/1.5 var(--font-koppen), Georgia, serif; }
+blockquote { padding-left: 1.25rem; border-left: 2px solid var(--accent); font: 1.3rem/1.5 var(--font-koppen), Georgia, serif; }
 
 .label {
     display: flex;
@@ -130,7 +122,7 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--kleur-accent); 
     font-weight: 600;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--kleur-accent);
+    color: var(--accent);
 }
 .label::before { content: ''; width: 1.5rem; height: 2px; background: currentColor; }
 
@@ -138,10 +130,10 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--kleur-accent); 
 .knoppen { display: flex; flex-wrap: wrap; gap: .75rem; }
 .knoppen a {
     padding: .75rem 1.5rem;
-    border: 1.5px solid var(--kleur-accent);
+    border: 1.5px solid var(--accent);
     border-radius: 99px;
-    background: var(--kleur-accent);
-    color: var(--op-accent);
+    background: var(--accent);
+    color: var(--knoptekst);
     font-weight: 600;
     text-decoration: none;
     transition: filter .2s, background .2s;
@@ -153,11 +145,11 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--kleur-accent); 
 .kaarten { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
 .kaart {
     padding: 1.75rem;
-    border: 1px solid color-mix(in srgb, var(--tekst) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tekst) 12%, transparent);
     border-radius: var(--rond);
-    background: color-mix(in srgb, var(--vlak), #fff 55%);
+    /* Een tint richting de tekstkleur: op licht iets donkerder, op donker iets lichter */
+    background: color-mix(in srgb, var(--achtergrond), var(--tekst) 6%);
 }
-.donker .kaart { background: color-mix(in srgb, var(--vlak), #fff 8%); }
 .kaart > * + * { margin-top: .6rem; }
 
 .tijdlijn { padding: 0; list-style: none; border-left: 2px solid color-mix(in srgb, var(--tekst) 15%, transparent); }
@@ -170,12 +162,12 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--kleur-accent); 
     top: .35rem;
     width: 12px;
     height: 12px;
-    border: 2px solid var(--kleur-accent);
+    border: 2px solid var(--accent);
     border-radius: 50%;
-    background: var(--vlak);
+    background: var(--achtergrond);
 }
 .tijdlijn > li > * + * { margin-top: .4rem; }
-.periode { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--kleur-accent); }
+.periode { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
 
 /* ─── Menubalk ──────────────────────────────────────────── */
 .menubalk {
@@ -183,36 +175,50 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--kleur-accent); 
     inset: 0 0 auto;
     z-index: 100;
     height: var(--menu-h);
-    background: color-mix(in srgb, var(--kleur-achtergrond) 90%, transparent);
+    background: color-mix(in srgb, var(--achtergrond) 90%, transparent);
     backdrop-filter: blur(16px);
-    border-bottom: 1px solid color-mix(in srgb, var(--kleur-tekst) 10%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--tekst) 10%, transparent);
     transition: box-shadow .3s;
 }
-.menubalk.gescrold { box-shadow: 0 12px 32px rgb(0 0 0 / .08); }
+.menubalk.gescrold { box-shadow: 0 12px 32px color-mix(in srgb, var(--tekst) 8%, transparent); }
 .menubalk .breedte { display: flex; align-items: center; justify-content: space-between; height: 100%; }
-.merk { display: flex; align-items: center; gap: .75rem; font: 1.3rem var(--font-koppen), Georgia, serif; color: var(--kleur-koppen); text-decoration: none; }
+.merk { display: flex; align-items: center; gap: .75rem; font: 1.3rem var(--font-koppen), Georgia, serif; color: var(--koppen); text-decoration: none; }
 .merk img { height: 44px; width: auto; border-radius: 0; }
 .menubalk ul { display: flex; gap: .25rem; padding: 0; list-style: none; }
 .menubalk nav a { display: block; padding: .45rem .9rem; border-radius: 6px; font-size: .95rem; font-weight: 500; text-decoration: none; }
-.menubalk nav a:hover { background: color-mix(in srgb, var(--kleur-accent) 20%, transparent); }
+.menubalk nav a:hover { background: color-mix(in srgb, var(--accent) 20%, transparent); }
 .menuknop { display: none; padding: .5rem; border: 0; background: none; cursor: pointer; }
-.menuknop span { display: block; width: 22px; height: 2px; margin: 5px 0; background: var(--kleur-tekst); transition: .3s; }
+.menuknop span { display: block; width: 22px; height: 2px; margin: 5px 0; background: var(--tekst); transition: .3s; }
 .open .menuknop span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .open .menuknop span:nth-child(2) { opacity: 0; }
 .open .menuknop span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ─── Footer ────────────────────────────────────────────── */
-.footer { padding-block: 2.5rem; background: var(--vlak); color: var(--tekst); font-size: .95rem; }
-.footer .breedte { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+.footer { font-size: .95rem; }
+.footer .sectie { padding-block: 2.5rem; }
+.footer .inhoud > * + * { margin-top: .5rem; }
+/* Dunne scheiding boven de footer, ook als de sectie erboven dezelfde kleur heeft.
+   Net als de achtergrond loopt de lijn door tot de schermrand. */
+.footer > .rij:first-child .sectie::after {
+    content: '';
+    position: absolute;
+    inset: 0 -100vmax auto;
+    height: 1px;
+    background: color-mix(in srgb, var(--tekst) 15%, transparent);
+}
+
+/* Foutmelding uit script.js (toonFout): boven alles, ook boven de menubalk.
+   Vaste kleuren, zodat de melding ook leesbaar is als de kleuren in site.md niet kloppen. */
+.fout { position: relative; z-index: 1000; padding: .75rem var(--marge); background: #b00020; color: #fff; font: 600 1rem/1.4 system-ui, sans-serif; }
 
 /* ─── Animatie ──────────────────────────────────────────── */
 .js .reveal {
     opacity: 0;
     transform: translateY(var(--reveal-distance));
     transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease);
+    transition-delay: calc(var(--volgorde, 0) * var(--reveal-stagger)); /* --volgorde: zie activeerInvagen in script.js */
 }
 .js .reveal.visible { opacity: 1; transform: none; }
-.reveal + .reveal, .sectie + .sectie .inhoud { transition-delay: var(--reveal-stagger); }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -223,11 +229,12 @@ blockquote { padding-left: 1.25rem; border-left: 2px solid var(--kleur-accent); 
 /* ─── Mobiel: secties onder elkaar, menu achter een knop ── */
 @media (max-width: 800px) {
     .rij.twee { grid-template-columns: 1fr; }
-    .twee > .sectie:is(:first-child, :last-child) { padding-inline: 0; clip-path: inset(0 -100vmax); }
+    .twee > .sectie:is(:first-child, :last-child) { padding-inline: 0; clip-path: inset(0 -100vmax -1px); }
     main > .rij:first-child .sectie + .sectie { padding-top: var(--ruimte); }
+    .footer > .rij:first-child .sectie + .sectie::after { content: none; }
     .plakt { position: static; }
     .menuknop { display: block; }
-    .menubalk nav { display: none; position: absolute; top: var(--menu-h); inset-inline: 0; padding: 1rem var(--marge); background: var(--kleur-achtergrond); border-bottom: 1px solid color-mix(in srgb, var(--kleur-tekst) 10%, transparent); }
+    .menubalk nav { display: none; position: absolute; top: var(--menu-h); inset-inline: 0; padding: 1rem var(--marge); background: var(--achtergrond); border-bottom: 1px solid color-mix(in srgb, var(--tekst) 10%, transparent); }
     .menubalk.open nav { display: block; }
     .menubalk ul { flex-direction: column; }
 }

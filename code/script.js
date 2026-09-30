@@ -1,6 +1,6 @@
 /*
  * Bouwt de pagina op uit twee tekstbestanden:
- *   - site.md: instellingen die voor de hele site gelden (naam, logo, kleuren, menu, footer)
+ *   - site.md: instellingen die voor de hele site gelden (naam, logo, kleuren, thema's, menu, footer)
  *   - de .md van deze pagina: de rijen en secties, en eventueel instellingen die afwijken
  *
  * Welke bestanden dat zijn, staat in de HTML-pagina:
@@ -15,9 +15,9 @@ const scriptTag = document.currentScript;
 
 /* ─── 1. Een .md-bestand lezen ────────────────────────────────────────────── */
 
-// De markeringen die een nieuw blok beginnen, bijvoorbeeld [sectie achtergrond=olijf].
+// De markeringen die een nieuw blok beginnen, bijvoorbeeld [sectie thema=groen].
 // Een markering staat altijd alleen op een regel.
-const MARKERING = /^\[(site|kleuren|menu|footer|rij|sectie|kaart|tijdlijn)\b\s*(.*)\]$/;
+const MARKERING = /^\[(site|kleuren|thema|menu|footer|rij|sectie|kaart|tijdlijn)\b\s*(.*)\]$/;
 
 // Knipt de tekst op in blokken: bij elke markering begint een nieuw blok.
 // Tekst vóór de eerste markering hoort bij geen enkel blok en wordt dus niet getoond.
@@ -36,11 +36,13 @@ function splitsInBlokken(tekst) {
 
 // Zet de blokken om in een overzicht van wat er in het bestand staat.
 // `basis` is de locatie van het bestand; paden in het bestand gelden vanaf daar.
+// Na [footer] horen alle rijen bij de footer; [footer] staat dus altijd als laatste.
 function leesBestand(tekst, basis) {
-    const bestand = { site: {}, kleuren: {}, menu: null, footer: null, rijen: [] };
+    const bestand = { site: {}, kleuren: {}, themas: {}, menu: null, footer: null, rijen: [] };
 
     for (const blok of splitsInBlokken(tekst)) {
-        const rij = bestand.rijen.at(-1);
+        const rijen = (bestand.footer ?? bestand).rijen;
+        const rij = rijen.at(-1);
         const sectie = rij?.secties.at(-1);
 
         switch (blok.naam) {
@@ -48,17 +50,25 @@ function leesBestand(tekst, basis) {
             case 'kleuren':
                 Object.assign(bestand[blok.naam], leesInstellingen(blok.regels));
                 break;
+            case 'thema':
+                if (!blok.rest) throw new Error('[thema] zonder naam; schrijf bijvoorbeeld [thema groen]');
+                bestand.themas[blok.rest] = leesInstellingen(blok.regels);
+                break;
             case 'menu':
+                bestand.menu = { regels: blok.regels, basis };
+                break;
             case 'footer':
-                bestand[blok.naam] = { regels: blok.regels, basis };
+                if (blok.rest || blok.regels.some(regel => regel.trim())) {
+                    throw new Error('Na [footer] komen een [rij] en [sectie], net als op een pagina');
+                }
+                bestand.footer = { rijen: [] };
                 break;
             case 'rij':
-                bestand.rijen.push({ opties: leesOpties(blok.rest), secties: [] });
+                rijen.push({ opties: leesOpties(blok.rest), secties: [] });
                 break;
             case 'sectie':
                 if (!rij) {
-                    console.warn('[sectie] zonder [rij] ervoor wordt overgeslagen');
-                    break;
+                    throw new Error('[sectie] zonder [rij] ervoor');
                 }
                 rij.secties.push({
                     opties: leesOpties(blok.rest),
@@ -69,8 +79,7 @@ function leesBestand(tekst, basis) {
             case 'kaart':
             case 'tijdlijn':
                 if (!sectie) {
-                    console.warn(`[${blok.naam}] buiten een [sectie] wordt overgeslagen`);
-                    break;
+                    throw new Error(`[${blok.naam}] buiten een [sectie]`);
                 }
                 sectie.delen.push({ soort: blok.naam, titel: blok.rest, regels: blok.regels });
                 break;
@@ -132,7 +141,7 @@ function markdownNaarHtml(regels, basis) {
         const punt = regel.match(/^[-*]\s+(.+)$/);               // - opsommingsteken
         const nummer = regel.match(/^\d+[.)]\s+(.+)$/);          // 1. genummerd
         const citaat = regel.match(/^>\s?(.*)$/);                // > citaat
-        const knop = /^\[[^\]]+\]\([^)]+\)$/.test(regel);        // alleen een link op de regel
+        const knop = regel.match(/^(\[[^\]]+\]\([^)]+\))\{\.knop\}$/); // [tekst](adres){.knop}
 
         if (regel === '') {
             sluitBlok();
@@ -150,7 +159,7 @@ function markdownNaarHtml(regels, basis) {
         } else if (citaat) {
             voegToeAanBlok('blockquote', citaat[1]);
         } else if (knop) {
-            voegToeAanBlok('knoppen', regel);
+            voegToeAanBlok('knoppen', knop[1]);
         } else {
             voegToeAanBlok('p', regel);
         }
@@ -197,7 +206,10 @@ function pad(adres, basis) {
 /* ─── 3. De pagina bouwen ─────────────────────────────────────────────────── */
 
 function zetTitelEnBeschrijving(site) {
-    document.title = site.titel ?? site.naam ?? '';
+    for (const naam of ['titel', 'thema', 'font-koppen', 'font-tekst']) {
+        if (!site[naam]) throw new Error(`"${naam}:" ontbreekt in [site]`);
+    }
+    document.title = site.titel;
     if (site.beschrijving) {
         document.head.append(Object.assign(document.createElement('meta'), { name: 'description', content: site.beschrijving }));
     }
@@ -206,41 +218,54 @@ function zetTitelEnBeschrijving(site) {
     }
 }
 
-// Elke kleur uit [kleuren] wordt een CSS-variabele: "olijf: #6F7D45" → --kleur-olijf.
+// Elke kleur uit [kleuren] wordt een CSS-variabele: "groen: #6F7D45" → --kleur-groen.
+// Elke kleur moet als #rrggbb geschreven zijn.
 function zetKleuren(kleuren) {
-    const root = document.documentElement.style;
     for (const [naam, waarde] of Object.entries(kleuren)) {
-        root.setProperty(`--kleur-${naam}`, waarde);
+        if (!/^#[0-9a-f]{6}$/i.test(waarde)) throw new Error(`Kleur "${naam}: ${waarde}" is geen #rrggbb`);
+        document.documentElement.style.setProperty(`--kleur-${naam}`, waarde);
     }
-    // Tekst op een knop in de accentkleur: licht of donker, afhankelijk van het accent.
-    root.setProperty('--op-accent', isDonker(kleuren.accent) ? 'var(--kleur-achtergrond)' : 'var(--kleur-tekst)');
 }
 
-// Is een kleur (#rrggbb) donker? Dan hoort er lichte tekst op.
-// De formule weegt rood, groen en blauw zoals het oog ze ervaart (resultaat 0–255).
-function isDonker(kleur) {
-    const hex = /^#([0-9a-f]{6})$/i.exec(kleur ?? '');
-    if (!hex) return false;
-    const [rood, groen, blauw] = [0, 2, 4].map(i => parseInt(hex[1].slice(i, i + 2), 16));
-    return 0.299 * rood + 0.587 * groen + 0.114 * blauw < 150;
-}
-
-// "olijf" → "var(--kleur-olijf)", met een waarschuwing als de kleur niet in [kleuren] staat.
+// "groen" → "var(--kleur-groen)"; de kleur moet in [kleuren] staan.
 function kleur(naam, kleuren) {
-    if (!(naam in kleuren)) console.warn(`Kleur "${naam}" staat niet in [kleuren]`);
+    if (!(naam in kleuren)) throw new Error(`Kleur "${naam}" staat niet in [kleuren]`);
     return `var(--kleur-${naam})`;
 }
 
+// De rollen die een [thema] invult. Elke rol wordt een CSS-variabele: achtergrond → --achtergrond.
+const ROLLEN = ['achtergrond', 'tekst', 'koppen', 'accent', 'knoptekst'];
+
+// Zet de kleuren van een thema op een element (pagina, sectie of footer), en daarna de losse
+// opties die ervan afwijken, zoals accent=rood of patroonkleur=licht.
+// Wat een element niet zelf zet, erft het van de pagina (het thema uit [site]).
+function zetKleurrollen(element, opties, stijl) {
+    if (opties.thema) {
+        const thema = stijl.themas[opties.thema];
+        if (!thema) throw new Error(`Thema "${opties.thema}" bestaat niet; maak een [thema ${opties.thema}] in site.md`);
+        for (const rol of ROLLEN) {
+            if (!thema[rol]) throw new Error(`"${rol}:" ontbreekt in [thema ${opties.thema}]`);
+            element.style.setProperty(`--${rol}`, kleur(thema[rol], stijl.kleuren));
+        }
+    }
+    for (const rol of [...ROLLEN, 'patroonkleur']) {
+        if (opties[rol]) element.style.setProperty(`--${rol}`, kleur(opties[rol], stijl.kleuren));
+    }
+}
+
 // Laadt een font van Google Fonts. Geeft een belofte terug die klaar is als het stylesheet binnen is.
+// Een onbekende fontnaam (of geen verbinding met Google) geeft een foutmelding op de pagina.
 function laadFont(naam, cssVariabele, gewichten) {
-    if (!naam) return Promise.resolve();
     document.documentElement.style.setProperty(cssVariabele, `'${naam}'`);
     const link = Object.assign(document.createElement('link'), {
         rel: 'stylesheet',
         href: `https://fonts.googleapis.com/css2?family=${naam.replaceAll(' ', '+')}${gewichten}&display=swap`,
     });
     document.head.append(link);
-    return new Promise(klaar => { link.onload = link.onerror = klaar; });
+    return new Promise(klaar => {
+        link.onload = klaar;
+        link.onerror = () => { toonFout(`Font "${naam}" kon niet geladen worden van Google Fonts`); klaar(); };
+    });
 }
 
 function maakMenubalk(site, menu, siteBasis) {
@@ -258,10 +283,10 @@ function maakMenubalk(site, menu, siteBasis) {
     return balk;
 }
 
-function maakRij(rij, kleuren) {
+function maakRij(rij, stijl) {
     const element = document.createElement('div');
     element.className = rij.secties.length === 2 ? 'rij twee' : 'rij';
-    if (rij.secties.length > 2) console.warn('Een [rij] heeft maximaal twee secties');
+    if (rij.secties.length > 2) throw new Error('Een [rij] heeft maximaal twee secties');
 
     // verhouding=1:2 → de linker sectie krijgt 1/3 van de breedte
     if (rij.opties.verhouding) {
@@ -269,34 +294,26 @@ function maakRij(rij, kleuren) {
         element.style.setProperty('--deel', links / (links + rechts));
     }
 
-    element.append(...rij.secties.map(sectie => maakSectie(sectie, kleuren)));
+    element.append(...rij.secties.map(sectie => maakSectie(sectie, stijl)));
     return element;
 }
 
-function maakSectie(sectie, kleuren) {
-    const { achtergrond, tekst, patroon, patroonkleur, schaal, uitlijning, id } = sectie.opties;
+function maakSectie(sectie, stijl) {
+    const { patroon, schaal, uitlijning, id } = sectie.opties;
     const element = document.createElement('section');
     element.className = 'sectie';
     if (id) element.id = id;
 
-    if (achtergrond) {
-        element.style.setProperty('--vlak', kleur(achtergrond, kleuren));
-        if (isDonker(kleuren[achtergrond])) element.classList.add('donker');
-    }
-    if (tekst) {
-        element.style.setProperty('--tekst', kleur(tekst, kleuren));
-        element.style.setProperty('--koppen', kleur(tekst, kleuren));
-    }
+    zetKleurrollen(element, sectie.opties, stijl);
     if (patroon) {
         element.classList.add('patroon');
         element.style.setProperty('--patroon', `url("${pad(patroon, sectie.basis)}")`);
     }
-    if (patroonkleur) element.style.setProperty('--patroonkleur', kleur(patroonkleur, kleuren));
     if (schaal) element.style.setProperty('--schaal', schaal);
     if (uitlijning) {
         const verticaal = { boven: 'start', midden: 'center', onder: 'end' }[uitlijning];
         if (verticaal) element.style.setProperty('--uitlijning', verticaal);
-        else console.warn(`uitlijning=${uitlijning} bestaat niet; kies boven, midden of onder`);
+        else throw new Error(`uitlijning=${uitlijning} bestaat niet; kies boven, midden of onder`);
     }
 
     element.innerHTML = `<div class="inhoud reveal">${delenNaarHtml(sectie.delen, sectie.basis)}</div>`;
@@ -304,12 +321,16 @@ function maakSectie(sectie, kleuren) {
 }
 
 // Een sectie bestaat uit tekst, gevolgd door eventueel kaarten of tijdlijn-items.
-// Opeenvolgende kaarten komen samen in één raster, opeenvolgende tijdlijn-items in één tijdlijn.
+// Opeenvolgende tijdlijn-items komen samen in één tijdlijn. Kaarten zonder lege regel
+// ertussen komen naast elkaar in één rij; een lege regel vóór [kaart] begint een nieuwe rij.
 function delenNaarHtml(delen, basis) {
+    const eindigtLeeg = deel => deel.regels.at(-1)?.trim() === '';
     const groepen = [];
     for (const deel of delen) {
         const vorige = groepen.at(-1);
-        if (vorige?.soort === deel.soort) vorige.delen.push(deel);
+        const hoortBijVorige = vorige?.soort === deel.soort
+            && !(deel.soort === 'kaart' && eindigtLeeg(vorige.delen.at(-1)));
+        if (hoortBijVorige) vorige.delen.push(deel);
         else groepen.push({ soort: deel.soort, delen: [deel] });
     }
 
@@ -327,13 +348,11 @@ function delenNaarHtml(delen, basis) {
     }).join('');
 }
 
-// De footer is opgemaakt als een sectie in de kleur van de koppen.
-function maakFooter(footer, kleuren) {
+// De footer bestaat uit gewone rijen en secties.
+function maakFooter(footer, stijl) {
     const element = document.createElement('footer');
     element.className = 'footer';
-    element.style.setProperty('--vlak', 'var(--kleur-koppen)');
-    if (isDonker(kleuren.koppen ?? kleuren.tekst)) element.classList.add('donker');
-    element.innerHTML = `<div class="breedte">${footer ? markdownNaarHtml(footer.regels, footer.basis) : ''}</div>`;
+    element.append(...footer.rijen.map(rij => maakRij(rij, stijl)));
     return element;
 }
 
@@ -396,19 +415,33 @@ function openExterneLinksApart() {
     });
 }
 
-// Blokken met .reveal vagen in zodra ze in beeld komen.
+// Zodra een rij in beeld komt, vagen de blokken met .reveal erin één voor één in.
+// Ze krijgen een volgnummer (0, 1, 2 …) in de volgorde van de pagina; de CSS laat elk
+// volgend blok --reveal-stagger later beginnen. Komen meerdere rijen tegelijk in beeld
+// (bij het laden), dan loopt de telling door over die rijen.
 function activeerInvagen() {
-    const blokken = document.querySelectorAll('.reveal');
-    const waarnemer = new IntersectionObserver(items => items.forEach(item => {
-        if (!item.isIntersecting) return;
-        item.target.classList.add('visible');
-        waarnemer.unobserve(item.target);
-    }), { threshold: 0.1 });
-    blokken.forEach(blok => waarnemer.observe(blok));
+    // Een rij telt als in beeld zodra de bovenkant boven de onderste 10% van het scherm komt,
+    // ongeacht hoe hoog de rij is (rootMargin haalt die 10% van het scherm af).
+    const waarnemer = new IntersectionObserver(items => {
+        const rijen = items.filter(item => item.isIntersecting).map(item => item.target);
+        const blokken = rijen.flatMap(rij => [...rij.querySelectorAll('.reveal')]);
+        blokken.forEach((blok, volgorde) => {
+            blok.style.setProperty('--volgorde', volgorde);
+            blok.classList.add('visible');
+        });
+        rijen.forEach(rij => waarnemer.unobserve(rij));
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.rij').forEach(rij => waarnemer.observe(rij));
 }
 
 
 /* ─── 5. Opstarten ────────────────────────────────────────────────────────── */
+
+// Een fout in de .md-bestanden komt als rode balk bovenaan de pagina, zodat je hem meteen ziet.
+function toonFout(tekst) {
+    console.error(tekst);
+    document.body.prepend(Object.assign(document.createElement('p'), { className: 'fout', textContent: tekst }));
+}
 
 async function laadTekst(adres) {
     const antwoord = await fetch(adres);
@@ -427,30 +460,35 @@ async function laadTekst(adres) {
 
         // Wat de pagina zelf instelt, gaat voor op site.md. [menu] en [footer] gaan in hun geheel.
         const instellingen = { ...site.site, ...pagina.site };
-        const kleuren = { ...site.kleuren, ...pagina.kleuren };
+        const stijl = {
+            kleuren: { ...site.kleuren, ...pagina.kleuren },
+            themas: { ...site.themas, ...pagina.themas },
+        };
         const menu = pagina.menu ?? site.menu;
         const footer = pagina.footer ?? site.footer;
 
         zetTitelEnBeschrijving(instellingen);
-        zetKleuren(kleuren);
+        zetKleuren(stijl.kleuren);
+        zetKleurrollen(document.documentElement, { thema: instellingen.thema }, stijl);
         fontsGeladen = Promise.all([
             laadFont(instellingen['font-koppen'], '--font-koppen', ''),
             laadFont(instellingen['font-tekst'], '--font-tekst', ':wght@400;600'),
         ]);
 
         const main = document.createElement('main');
-        main.append(...pagina.rijen.map(rij => maakRij(rij, kleuren)));
-        document.body.append(maakMenubalk(instellingen, menu, siteAdres), main, maakFooter(footer, kleuren));
+        main.append(...pagina.rijen.map(rij => maakRij(rij, stijl)));
+        document.body.append(maakMenubalk(instellingen, menu, siteAdres), main);
+        if (footer) document.body.append(maakFooter(footer, stijl));
 
         maakAnkers();
         openExterneLinksApart();
         activeerMenu();
     } catch (fout) {
-        console.error('De pagina kon niet volledig geladen worden:', fout);
+        toonFout(`De pagina kon niet geladen worden: ${fout.message}`);
     } finally {
         // Wacht op de fonts (maximaal --font-wait ms), zodat de tekst niet verspringt.
         // Eerst de opmaak forceren: pas dan vraagt de browser de fonts van de nieuwe tekst aan.
-        const fontWacht = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-wait')) || 1000;
+        const fontWacht = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-wait'));
         const fontsKlaar = fontsGeladen.then(() => {
             void document.body.offsetHeight;
             return document.fonts.ready;

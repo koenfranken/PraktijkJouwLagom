@@ -8,7 +8,7 @@ titel: Algemene voorwaarden · Jouw Lagom
 beschrijving: Algemene voorwaarden van Jouw Lagom.
 
 [rij]
-[sectie achtergrond=licht]
+[sectie thema=groen patroon=images/lijnen.svg]
 [label Juridisch]
 # Algemene voorwaarden
 Jouw Lagom · laatst bijgewerkt: 1 januari 2026

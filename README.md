@@ -25,16 +25,24 @@ titel: Jouw Lagom · orthomoleculaire therapie     ← tabblad en Google
 beschrijving: Korte omschrijving voor Google.
 font-koppen: Young Serif                           ← naam zoals op fonts.google.com
 font-tekst: Instrument Sans
+thema: licht                                       ← thema van de pagina, menubalk en secties zonder thema
 
 [kleuren]
-achtergrond: #F7F4EE     ← vaste namen: achtergrond, tekst, koppen, accent
-tekst: #222020
-koppen: #7F1D1A
-accent: #D8A032          ← knoppen, labels, ==accent==, onderstreping van links
-olijf: #6F7D45           ← eigen namen, te gebruiken in secties
+donker: #222020          ← het palet: eigen namen, als #rrggbb
+licht: #F7F4EE
+groen: #6F7D45
+rood: #7F1D1A
+geel: #D8A032
+
+[thema groen]            ← een thema koppelt paletkleuren aan rollen; alle vijf verplicht
+achtergrond: groen
+tekst: licht
+koppen: licht
+accent: licht            ← labels, ==accent==, opsommingstekens, citaatstreep, tijdlijn, knoppen, onderstreping van links
+knoptekst: groen         ← tekst op een knop (die de accentkleur heeft)
 ```
 
-Kleuren schrijf je als `#rrggbb`. Het menu is een lijst met links; de footer is vrije tekst:
+Verplicht zijn `titel`, `thema`, `font-koppen` en `font-tekst`. Ontbreekt er één, of klopt er iets niet (onbekende kleurnaam, fout in de opbouw), dan staat er een rode foutmelding bovenaan de pagina. Het menu is een lijst met links; de footer is vrije tekst:
 
 ```
 [menu]
@@ -42,18 +50,25 @@ Kleuren schrijf je als `#rrggbb`. Het menu is een lijst met links; de footer is 
 - [Voorwaarden](voorwaarden.html)
 
 [footer]
-**Jouw Lagom** · [Algemene voorwaarden](voorwaarden.html)
+[rij verhouding=2:1]
+[sectie thema=rood]
+**Jouw Lagom** · orthomoleculaire therapie
+
+[sectie thema=rood]
+[a.b@c.com](mailto:a.b@c.com) · [Algemene voorwaarden](voorwaarden.html)
 ```
 
-**Per pagina afwijken:** zet hetzelfde blok in de `.md` van die pagina. Bij `[site]` en `[kleuren]` gelden alleen de regels die je daar noemt; `[menu]` en `[footer]` worden in hun geheel vervangen.
+De footer bestaat uit gewone rijen en secties (zie hieronder), alleen met minder ruimte en een kleinere letter. Alles na `[footer]` hoort bij de footer, dus `[footer]` staat altijd als laatste in het bestand.
+
+**Per pagina afwijken:** zet hetzelfde blok in de `.md` van die pagina. Bij `[site]` en `[kleuren]` gelden alleen de regels die je daar noemt; `[thema …]`, `[menu]` en `[footer]` worden in hun geheel vervangen.
 
 ## Rijen en secties
 
 ```
 [rij verhouding=1:2]
-[sectie achtergrond=olijf]
+[sectie thema=groen]
 ...tekst...
-[sectie achtergrond=licht patroon=images/stippen.svg patroonkleur=olijf schaal=2]
+[sectie thema=geel accent=groen patroon=images/stippen.svg schaal=2]
 ...tekst...
 ```
 
@@ -63,10 +78,10 @@ Kleuren schrijf je als `#rrggbb`. Het menu is een lijst met links; de footer is 
 
 | Optie | Doet |
 |---|---|
-| `achtergrond=olijf` | Kleur uit `[kleuren]`; op een donkere kleur wordt de tekst automatisch licht |
-| `tekst=rood` | Tekstkleur zelf kiezen |
-| `patroon=images/stippen.svg` | Herhaald patroon; het bestand bepaalt de vorm en doorzichtigheid |
-| `patroonkleur=olijf` | Kleur van het patroon (standaard de tekstkleur) |
+| `thema=groen` | Kleuren uit `[thema groen]`; zonder thema geldt het thema uit `[site]` |
+| `achtergrond=`, `tekst=`, `koppen=`, `accent=`, `knoptekst=` | Eén rol van het thema overschrijven met een kleur uit `[kleuren]` |
+| `patroon=images/stippen.svg` | Herhaald patroon; het bestand bepaalt de vorm en doorzichtigheid. Aanwezig: `stippen`, `lijnen`, `zon`, `water`, `blad`, `kiezels`. Hetzelfde patroon in twee secties van een rij loopt naadloos door |
+| `patroonkleur=groen` | Kleur van het patroon (standaard de accentkleur) |
 | `schaal=2` | Patroon twee keer zo groot |
 | `uitlijning=midden` | Tekst verticaal `boven` (standaard), in het `midden` of `onder`; zichtbaar als de andere sectie in de rij hoger is |
 | `id=aanbod` | Anker om naartoe te linken; anders het `[label]` van de sectie |
@@ -77,12 +92,13 @@ Kleuren schrijf je als `#rrggbb`. Het menu is een lijst met links; de footer is 
 |---|---|
 | `# Kop`, `## Kop`, `### Kop` | Koppen; de eerste alinea na `#` of `##` wordt iets groter |
 | `**vet**`, `*cursief*`, `==accent==` | Opmaak |
-| `[tekst](adres)` | Link; staat hij alléén op een regel, dan wordt het een knop |
+| `[tekst](adres)` | Link |
+| `[tekst](adres){.knop}` | Knop (alleen op een regel). Knoppen op opeenvolgende regels staan naast elkaar: de eerste in de accentkleur, de rest doorzichtig. Een lege regel ertussen zet ze onder elkaar, elk in de accentkleur |
 | `![omschrijving](images/foto.jpg)` | Afbeelding |
 | `- punt`, `1. punt` | Lijsten |
 | `> tekst` | Citaat |
 | `[label Diensten]` | Klein label boven een kop |
-| `[kaart]` | Tegel; opeenvolgende kaarten staan naast elkaar |
+| `[kaart]` | Tegel. Zonder lege regel vóór de volgende `[kaart]` staan ze naast elkaar, met een lege regel onder elkaar. Op mobiel altijd onder elkaar |
 | `[tijdlijn 2020 – heden]` | Item in een tijdlijn |
 
 Een kaart of tijdlijn-item loopt door tot de volgende `[markering]`. Een lege regel begint een nieuwe alinea.
