@@ -68,6 +68,7 @@ Kleuren schrijf je als `#rrggbb`. Het menu is een lijst met links; de footer is 
 | `patroon=images/stippen.svg` | Herhaald patroon; het bestand bepaalt de vorm en doorzichtigheid |
 | `patroonkleur=olijf` | Kleur van het patroon (standaard de tekstkleur) |
 | `schaal=2` | Patroon twee keer zo groot |
+| `uitlijning=midden` | Tekst verticaal `boven` (standaard), in het `midden` of `onder`; zichtbaar als de andere sectie in de rij hoger is |
 | `id=aanbod` | Anker om naartoe te linken; anders het `[label]` van de sectie |
 
 ## Tekst binnen een sectie

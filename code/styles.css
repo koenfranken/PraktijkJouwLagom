@@ -23,7 +23,7 @@
     --rond: 12px;
 
     /* Animatie bij het laden en scrollen */
-    --fade: .5s;                            /* invagen van de hele pagina */
+    --fade: 5.5s;                            /* invagen van de hele pagina */
     --reveal-duration: .8s;                 /* duur van de fade-in per blok */
     --reveal-distance: 16px;                /* afstand die een blok omhoog schuift */
     --reveal-stagger: .15s;                 /* vertraging tussen blokken naast elkaar */
@@ -77,6 +77,10 @@ main { overflow-x: clip; }
        sectiekleur, die clip-path boven en onder afknipt (en bij twee secties aan de binnenkant). */
     box-shadow: 0 0 0 100vmax var(--vlak);
     clip-path: inset(0 -100vmax);
+    /* uitlijning= zet de tekst boven, in het midden of onder in de sectie */
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--uitlijning, start);
 }
 .twee > .sectie:first-child { padding-right: var(--tussenruimte); clip-path: inset(0 0 0 -100vmax); }
 .twee > .sectie:last-child { padding-left: var(--tussenruimte); clip-path: inset(0 -100vmax 0 0); }

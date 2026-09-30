@@ -274,7 +274,7 @@ function maakRij(rij, kleuren) {
 }
 
 function maakSectie(sectie, kleuren) {
-    const { achtergrond, tekst, patroon, patroonkleur, schaal, id } = sectie.opties;
+    const { achtergrond, tekst, patroon, patroonkleur, schaal, uitlijning, id } = sectie.opties;
     const element = document.createElement('section');
     element.className = 'sectie';
     if (id) element.id = id;
@@ -293,6 +293,11 @@ function maakSectie(sectie, kleuren) {
     }
     if (patroonkleur) element.style.setProperty('--patroonkleur', kleur(patroonkleur, kleuren));
     if (schaal) element.style.setProperty('--schaal', schaal);
+    if (uitlijning) {
+        const verticaal = { boven: 'start', midden: 'center', onder: 'end' }[uitlijning];
+        if (verticaal) element.style.setProperty('--uitlijning', verticaal);
+        else console.warn(`uitlijning=${uitlijning} bestaat niet; kies boven, midden of onder`);
+    }
 
     element.innerHTML = `<div class="inhoud reveal">${delenNaarHtml(sectie.delen, sectie.basis)}</div>`;
     return element;
