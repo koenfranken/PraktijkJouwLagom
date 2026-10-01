@@ -56,11 +56,11 @@ Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 In vervolgconsulten kijken we wat werkt en stellen we het plan bij.
 
 [rij]
-[sectie thema=geel patroon=images/lagom.svg beweging=drijven tempo=30 patroonkleur=groen schaal=1.5]
+[sectie thema=geel patroon=images/lagom.svg schaal=1.5]
 [label Agenda]
 ## Plan een afspraak
 
-[sectie thema=geel patroon=images/lagom.svg beweging=drijven tempo=30 patroonkleur=groen schaal=1.5]
+[sectie thema=geel patroon=images/lagom.svg schaal=1.5]
 [html]
 <div class="md-scheduler" data-env="praktijkjouwlagom" data-language="nl"></div>
 <script>
