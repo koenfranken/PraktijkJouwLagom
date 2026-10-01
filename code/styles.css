@@ -227,6 +227,11 @@ a.knop { display: inline-block; background: var(--accent); color: var(--knopteks
     --md-color-accent: var(--accent);
     --md-color-accent_text: var(--knoptekst);
 }
+/* Invoervelden minstens 16px: kleiner, en iOS zoomt in zodra je een veld aantikt.
+   Dan lijkt het formulier breder dan het scherm. */
+.md-scheduler input,
+.md-scheduler textarea,
+.md-scheduler select { font-size: 16px; }
 /* Versturen-knop in de vorm van een .knop */
 .md-scheduler__personal-form button {
     padding: .45rem .9rem;

@@ -1,0 +1,114 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "Praktijk Jouw Lagom" [ref=f1e4] [cursor=pointer]:
+        - /url: http://localhost:8000/
+      - button "Menu" [ref=f1e6] [cursor=pointer]
+  - main [ref=f1e10]:
+    - generic [ref=f1e11]:
+      - generic [ref=f1e13]:
+        - paragraph [ref=f1e14]: Orthomoleculaire therapie
+        - heading [level=1] [ref=f1e15]:
+          - text: Precies genoeg,
+          - mark [ref=f1e16]: voor jou
+          - text: .
+        - paragraph [ref=f1e17]: "Orthomoleculaire therapie kijkt naar wat jouw lichaam nodig heeft: voeding, vitaminen, mineralen en rust. Niet te veel, niet te weinig."
+        - paragraph [ref=f1e18]:
+          - link "Maak direct een afspraak" [ref=f1e19] [cursor=pointer]:
+            - /url: "#agenda"
+          - link "Liever eerst kennismaken" [ref=f1e20] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=f1e22]:
+        - blockquote [ref=f1e23]:
+          - paragraph [ref=f1e24]:
+            - strong [ref=f1e25]: lagom
+            - emphasis [ref=f1e26]: (Zweeds)
+            - text: ": precies genoeg; niet te veel, niet te weinig."
+        - paragraph [ref=f1e27]:
+          - text: Volgens een volksverhaal komt het van
+          - emphasis [ref=f1e28]: laget om
+          - text: ": de kom ging de kring rond en iedereen nam net genoeg, zodat er voor iedereen was."
+    - generic [ref=f1e31]:
+      - paragraph [ref=f1e32]: Aanbod
+      - heading "Waar ik je mee help" [level=2] [ref=f1e33]
+      - paragraph [ref=f1e34]: Van een eerste gesprek tot een plan dat in je dagelijks leven past.
+      - generic [ref=f1e35]:
+        - generic [ref=f1e36]:
+          - heading "Voeding" [level=3] [ref=f1e37]
+          - paragraph [ref=f1e38]: Een eetpatroon dat bij je leven past, zonder strenge regels.
+        - generic [ref=f1e39]:
+          - heading "Suppletie" [level=3] [ref=f1e40]
+          - paragraph [ref=f1e41]: Gericht aanvullen waar een tekort is, en niet meer dan nodig.
+        - generic [ref=f1e42]:
+          - heading "Leefstijl" [level=3] [ref=f1e43]
+          - paragraph [ref=f1e44]: Slaap, stress en beweging in balans.
+    - generic [ref=f1e45]:
+      - generic [ref=f1e47]:
+        - paragraph [ref=f1e48]: Werkwijze
+        - heading "Stap voor stap" [level=2] [ref=f1e49]
+        - paragraph [ref=f1e50]: Elk traject begint met luisteren. Daarna maken we samen een plan en stellen dat bij waar nodig.
+        - paragraph [ref=f1e51]:
+          - link "Plan een kennismaking" [ref=f1e52] [cursor=pointer]:
+            - /url: "#contact"
+      - list [ref=f1e55]:
+        - listitem [ref=f1e56]:
+          - paragraph [ref=f1e57]: Stap 1
+          - heading "Kennismaking" [level=3] [ref=f1e58]
+          - paragraph [ref=f1e59]: "Een vrijblijvend gesprek van een halfuur: wat speelt er, en past mijn aanpak bij jou?"
+        - listitem [ref=f1e60]:
+          - paragraph [ref=f1e61]: Stap 2
+          - heading "Intake" [level=3] [ref=f1e62]
+          - paragraph [ref=f1e63]: We brengen je klachten, voeding en leefstijl uitgebreid in kaart.
+        - listitem [ref=f1e64]:
+          - paragraph [ref=f1e65]: Stap 3
+          - heading "Advies op maat" [level=3] [ref=f1e66]
+          - paragraph [ref=f1e67]: Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
+        - listitem [ref=f1e68]:
+          - paragraph [ref=f1e69]: Stap 4
+          - heading "Begeleiding" [level=3] [ref=f1e70]
+          - paragraph [ref=f1e71]: In vervolgconsulten kijken we wat werkt en stellen we het plan bij.
+    - generic [ref=f1e74]:
+      - paragraph [ref=f1e75]: Agenda
+      - heading "Plan een afspraak" [level=2] [ref=f1e76]
+    - generic [ref=f1e78]:
+      - paragraph [ref=f1e81]:
+        - img "Portret" [ref=f1e82]
+      - generic [ref=f1e84]:
+        - paragraph [ref=f1e85]: Over mij
+        - heading "Aandacht voor het geheel" [level=2] [ref=f1e86]
+        - paragraph [ref=f1e87]: Vertel hier in een paar zinnen wie je bent, wat je achtergrond is en waarom je dit werk doet.
+        - paragraph [ref=f1e88]: "Beschrijf je aanpak: hoe werk je samen met cliënten, en wat mogen ze van je verwachten?"
+        - list [ref=f1e89]:
+          - listitem [ref=f1e90]: Persoonlijke aandacht
+          - listitem [ref=f1e91]: Een plan dat past bij jouw leven
+          - listitem [ref=f1e92]:
+            - strong [ref=f1e93]: Niet te veel, niet te weinig
+    - generic [ref=f1e94]:
+      - generic [ref=f1e96]:
+        - paragraph [ref=f1e97]: Contact
+        - heading "Zin in een kennismaking?" [level=2] [ref=f1e98]
+        - paragraph [ref=f1e99]: Stuur een bericht, dan plannen we een vrijblijvend gesprek.
+        - list [ref=f1e100]:
+          - listitem [ref=f1e101]: Reactie binnen twee werkdagen
+          - listitem [ref=f1e102]: Kennismaking is gratis
+      - generic [ref=f1e104]:
+        - generic [ref=f1e106]:
+          - heading "E-mail" [level=3] [ref=f1e107]
+          - paragraph [ref=f1e108]:
+            - link "a.b@c.com" [ref=f1e109] [cursor=pointer]:
+              - /url: mailto:a.b@c.com
+        - generic [ref=f1e111]:
+          - heading "Telefoon" [level=3] [ref=f1e112]
+          - paragraph [ref=f1e113]: 06 – 12 34 56 78
+  - contentinfo [ref=f1e114]:
+    - generic [ref=f1e115]:
+      - generic [ref=f1e117]:
+        - paragraph [ref=f1e118]:
+          - text: © 2026
+          - strong [ref=f1e119]: Praktijk Jouw Lagom
+        - paragraph [ref=f1e120]: Orthomoleculaire therapie
+      - generic [ref=f1e122]:
+        - paragraph [ref=f1e123]: "KvK nummer: TBD"
+        - paragraph [ref=f1e124]:
+          - link "Algemene voorwaarden" [ref=f1e125] [cursor=pointer]:
+            - /url: http://localhost:8000/voorwaarden.html
