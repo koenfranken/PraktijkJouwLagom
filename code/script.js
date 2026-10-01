@@ -310,8 +310,47 @@ function maakRij(rij, stijl) {
     return element;
 }
 
+// beweging= en tempo=: maakt van een patroonbestand een nieuwe SVG waarin het patroon zelf beweegt.
+// Waarom in de SVG en niet met CSS: CSS verschuift een kant-en-klaar plaatje, en dat kan alleen
+// in hele pixels (schokkerig als het langzaam gaat). Een SVG-animatie tekent de vormen elk frame
+// opnieuw, ook op posities tussen twee pixels in.
+// Elke beweging eindigt waar hij begon, zodat de herhaling naadloos is. tempo is in seconden:
+//   drijven   één tegel schuin opschuiven
+//   pulseren  één keer vervagen en weer terugkomen
+const BEWEGINGEN = {
+    drijven(b, h, tempo) {
+        // Het origineel staat er vier keer in (2×2); dat geheel schuift één tegel op.
+        return `<g>
+            <animateTransform attributeName="transform" type="translate" from="0 0" to="${b} ${h}"
+                dur="${tempo}s" repeatCount="indefinite"/>
+            <use href="#tegel"/><use href="#tegel" x="${-b}"/><use href="#tegel" y="${-h}"/><use href="#tegel" x="${-b}" y="${-h}"/>
+        </g>`;
+    },
+    pulseren(b, h, tempo) {
+        return `<use href="#tegel">
+            <animate attributeName="opacity" values="1;.15;1" keyTimes="0;.5;1" dur="${tempo}s" repeatCount="indefinite"
+                calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+        </use>`;
+    },
+};
+
+async function maakBewegendPatroon(bestand, beweging, tempo) {
+    const antwoord = await fetch(bestand);
+    if (!antwoord.ok) throw new Error(`Patroon "${bestand}" kon niet geladen worden`);
+    const origineel = new DOMParser().parseFromString(await antwoord.text(), 'image/svg+xml').documentElement;
+    const b = parseFloat(origineel.getAttribute('width'));
+    const h = parseFloat(origineel.getAttribute('height'));
+    if (!b || !h) throw new Error(`Patroon "${bestand}" heeft geen width en height; die zijn nodig voor beweging=`);
+    origineel.setAttribute('id', 'tegel');
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${b}" height="${h}" viewBox="0 0 ${b} ${h}">
+        <defs>${new XMLSerializer().serializeToString(origineel)}</defs>
+        ${BEWEGINGEN[beweging](b, h, tempo)}
+    </svg>`;
+    return URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+}
+
 function maakSectie(sectie, stijl) {
-    const { patroon, schaal, uitlijning, id } = sectie.opties;
+    const { patroon, schaal, sterkte, beweging, tempo, uitlijning, id } = sectie.opties;
     const element = document.createElement('section');
     element.className = 'sectie';
     if (id) element.id = id;
@@ -322,6 +361,17 @@ function maakSectie(sectie, stijl) {
         element.style.setProperty('--patroon', `url("${pad(patroon, sectie.basis)}")`);
     }
     if (schaal) element.style.setProperty('--schaal', schaal);
+    if (sterkte) element.style.setProperty('--patroonsterkte', sterkte);
+    if (beweging) {
+        if (!patroon) throw new Error('beweging= werkt alleen samen met patroon=');
+        if (!BEWEGINGEN[beweging]) throw new Error(`beweging=${beweging} bestaat niet; kies ${Object.keys(BEWEGINGEN).join(' of ')}`);
+        if (!(Number(tempo) > 0)) throw new Error(`beweging=${beweging} heeft een tempo nodig, bijvoorbeeld tempo=60 (seconden)`);
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            maakBewegendPatroon(pad(patroon, sectie.basis), beweging, Number(tempo))
+                .then(url => element.style.setProperty('--patroon', `url("${url}")`))
+                .catch(fout => toonFout(fout.message));
+        }
+    }
     if (uitlijning) {
         const verticaal = { boven: 'start', midden: 'center', onder: 'end' }[uitlijning];
         if (verticaal) element.style.setProperty('--uitlijning', verticaal);

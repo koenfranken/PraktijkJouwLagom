@@ -9,13 +9,13 @@ Orthomoleculaire therapie kijkt naar wat jouw lichaam nodig heeft: voeding, vita
 [Maak direct een afspraak](#agenda){.knop}
 [Liever eerst kennismaken](#contact){.knop}
 
-[sectie patroon=images/blad.svg schaal=1.5 uitlijning=onder patroonkleur=groen]
+[sectie patroon=images/molecuulnet-blad.svg schaal=1.5 uitlijning=onder beweging=drijven tempo=60]
 > **lagom** *(Zweeds)*: precies genoeg; niet te veel, niet te weinig.
 
 Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en iedereen nam net genoeg, zodat er voor iedereen was.
 
 [rij]
-[sectie thema=groen patroon=images/stippen.svg]
+[sectie thema=groen patroon=images/honingraat.svg]
 [label Aanbod]
 ## Waar ik je mee help
 Van een eerste gesprek tot een plan dat in je dagelijks leven past.
@@ -56,11 +56,11 @@ Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 In vervolgconsulten kijken we wat werkt en stellen we het plan bij.
 
 [rij]
-[sectie thema=geel]
+[sectie thema=geel patroon=images/lagom.svg beweging=drijven tempo=30 patroonkleur=groen schaal=1.5]
 [label Agenda]
 ## Plan een afspraak
 
-[sectie thema=geel]
+[sectie thema=geel patroon=images/lagom.svg beweging=drijven tempo=30 patroonkleur=groen schaal=1.5]
 [html]
 <div class="md-scheduler" data-env="praktijkjouwlagom" data-language="nl"></div>
 <script>
@@ -76,7 +76,7 @@ In vervolgconsulten kijken we wat werkt en stellen we het plan bij.
 [/html]
 
 [rij verhouding=1:2]
-[sectie patroon=images/lagom.svg patroonkleur=groen]
+[sectie]
 ![Portret](images/portret.svg)
 
 [sectie]

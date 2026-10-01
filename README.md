@@ -73,19 +73,52 @@ De footer bestaat uit gewone rijen en secties (zie hieronder), alleen met minder
 ...tekst...
 ```
 
-- Een `[rij]` heeft één of twee secties. Twee secties staan standaard 50/50 naast elkaar; `verhouding=1:2` of `2:1` verandert dat. Op mobiel staan ze onder elkaar.
+- Een `[rij]` heeft één of twee secties. Op mobiel staan ze onder elkaar.
 - Bij twee secties blijft de kortste staan tijdens het scrollen (als hij op het scherm past).
-- Sectie-opties:
+- Opties schrijf je als `naam=waarde`, zonder spaties in de waarde, gescheiden door een spatie. Een onbekende waarde geeft een rode foutmelding bovenaan de pagina.
 
-| Optie | Doet |
-|---|---|
-| `thema=groen` | Kleuren uit `[thema groen]`; zonder thema geldt het thema uit `[site]` |
-| `achtergrond=`, `tekst=`, `koppen=`, `accent=`, `knoptekst=` | Eén rol van het thema overschrijven met een kleur uit `[kleuren]` |
-| `patroon=images/stippen.svg` | Herhaald patroon; het bestand bepaalt de vorm en doorzichtigheid. Aanwezig: `stippen`, `lijnen`, `zon`, `water`, `blad`, `kiezels`, `lagom` (de balken uit het logo). Hetzelfde patroon in twee secties van een rij loopt naadloos door |
-| `patroonkleur=groen` | Kleur van het patroon (standaard de accentkleur) |
-| `schaal=2` | Patroon twee keer zo groot |
-| `uitlijning=midden` | Tekst verticaal `boven` (standaard), in het `midden` of `onder`; zichtbaar als de andere sectie in de rij hoger is |
-| `id=aanbod` | Anker om naartoe te linken; anders het `[label]` van de sectie |
+**Rij-opties**
+
+| Optie | Mogelijke waarden | Zonder deze optie | Doet |
+|---|---|---|---|
+| `verhouding=` | twee getallen met `:`, bijv. `1:2`, `2:1`, `3:2` | `1:1` | Breedteverhouding van de linker en rechter sectie |
+
+**Sectie-opties**
+
+| Optie | Mogelijke waarden | Zonder deze optie | Doet |
+|---|---|---|---|
+| `thema=` | een thema uit `site.md`: `licht`, `groen`, `geel`, `rood`, `donker` | het thema uit `[site]` | Alle kleuren van de sectie |
+| `achtergrond=`, `tekst=`, `koppen=`, `accent=`, `knoptekst=` | een kleur uit `[kleuren]`: `donker`, `licht`, `groen`, `rood`, `geel` | de kleur uit het thema | Eén rol van het thema overschrijven |
+| `patroon=` | pad naar een SVG, zie de lijst hieronder | geen patroon | Herhaald patroon. Hetzelfde patroon in twee secties van een rij loopt naadloos door |
+| `patroonkleur=` | een kleur uit `[kleuren]` | de achtergrondkleur, net iets donkerder (op licht) of lichter (op donker) | Kleur van het patroon |
+| `sterkte=` | een getal groter dan 0, bijv. `0.5`, `2`, `4` | `1` | Hoe ver die automatische kleur van de achtergrond afwijkt. Doet niets samen met `patroonkleur=` |
+| `schaal=` | een getal groter dan 0, bijv. `0.75`, `1.5`, `2` | `1` | Patroon kleiner of groter |
+| `beweging=` | `drijven`, `pulseren` | stil | Patroon beweegt (alleen met `patroon=` en `tempo=`): `drijven` schuift schuin op · `pulseren` vervaagt en komt terug. Staat uit voor bezoekers die minder beweging hebben ingesteld. Beweging kost rekenkracht: houd het bij één bewegende sectie per pagina en een licht patroon (zie hieronder) |
+| `tempo=` | seconden, een getal groter dan 0, bijv. `8`, `30`, `60` | verplicht bij `beweging=` | Duur van één tegel opschuiven (`drijven`) of één puls (`pulseren`) |
+| `uitlijning=` | `boven`, `midden`, `onder` | `boven` | Tekst verticaal uitlijnen; zichtbaar als de andere sectie in de rij hoger is |
+| `id=` | een woord, bijv. `aanbod` | het `[label]` van de sectie | Anker om naartoe te linken (`#aanbod`) |
+
+**Patronen in `images/`**
+
+| Bestand | Vorm | Doorzichtigheid in het bestand |
+|---|---|---|
+| `stippen.svg` | Regelmatige stippen | geen |
+| `lijnen.svg` | Schuine lijnen | geen |
+| `honingraat.svg` | Onvolledig zeshoekrooster met atomen en een enkel blaadje | deels (30–80%) |
+| `verbonden.svg` | Molecuulringen en atomen, verbonden tot een net, hier en daar een blad | deels |
+| `molecuulnet.svg` | Structuurformules: ringen en ketens met zijgroepen, één doorlopend net | deels |
+| `molecuulnet-blad.svg` | Kleinere eigen molecuulstructuur met drie bladeren, verspreid over de tegel | deels |
+| `zon.svg` | Kleine zonnetjes | 22% |
+| `water.svg` | Golflijnen | 20% |
+| `blad.svg` | Losse blaadjes | 35% |
+| `kiezels.svg` | Steentjes | 22% |
+| `lagom.svg` | De balken uit het logo | 25% |
+
+De automatische patroonkleur is al subtiel. Bij een bestand dat zelf ook doorzichtig is (22–35%) blijft er dan bijna niets van over: gebruik daar `patroonkleur=` of een hoge `sterkte=`.
+
+Belasting (gemeten in Edge en Firefox, met en zonder grafische kaart): een stilstaand patroon kost niets. `drijven` en `pulseren` lopen met alle patronen hierboven vloeiend, ook zonder grafische kaart. Op een trage laptop kost elke bewegende sectie zo'n 10–20% processortijd; de detailrijke patronen (`honingraat`, `verbonden`, `molecuulnet-blad`) zitten aan de bovenkant daarvan.
+
+Een eigen patroon: een SVG met `width` en `height` (de tegelmaat), in één kleur. De kleur in het bestand doet er niet toe, alleen de vorm en de doorzichtigheid. Wat over de rand van de tegel steekt, moet aan de overkant terugkomen.
 
 ## Tekst binnen een sectie
 
