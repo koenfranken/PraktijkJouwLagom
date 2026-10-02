@@ -93,7 +93,7 @@ De footer bestaat uit gewone rijen en secties (zie hieronder), alleen met minder
 | `patroonkleur=` | een kleur uit `[kleuren]` | de achtergrondkleur, net iets donkerder (op licht) of lichter (op donker) | Kleur van het patroon |
 | `sterkte=` | een getal groter dan 0, bijv. `0.5`, `2`, `4` | `1` | Hoe ver die automatische kleur van de achtergrond afwijkt. Doet niets samen met `patroonkleur=` |
 | `schaal=` | een getal groter dan 0, bijv. `0.75`, `1.5`, `2` | `1` | Patroon kleiner of groter |
-| `beweging=` | `drijven`, `pulseren` | stil | Patroon beweegt (alleen met `patroon=` en `tempo=`): `drijven` schuift schuin op · `pulseren` vervaagt en komt terug. Staat uit voor bezoekers die minder beweging hebben ingesteld. Beweging kost rekenkracht: houd het bij één bewegende sectie per pagina en een licht patroon (zie hieronder) |
+| `beweging=` | `drijven`, `pulseren` | stil | Patroon beweegt (alleen met `patroon=` en `tempo=`): `drijven` schuift schuin op · `pulseren` vervaagt en komt terug. Alleen op een computer met muis (niet op telefoon of tablet), en niet voor bezoekers die minder beweging hebben ingesteld. Beweging kost rekenkracht: houd het bij één bewegende sectie per pagina en een licht patroon (zie hieronder) |
 | `tempo=` | seconden, een getal groter dan 0, bijv. `8`, `30`, `60` | verplicht bij `beweging=` | Duur van één tegel opschuiven (`drijven`) of één puls (`pulseren`) |
 | `uitlijning=` | `boven`, `midden`, `onder` | `boven` | Tekst verticaal uitlijnen; zichtbaar als de andere sectie in de rij hoger is |
 | `id=` | een woord, bijv. `aanbod` | het `[label]` van de sectie | Anker om naartoe te linken (`#aanbod`) |

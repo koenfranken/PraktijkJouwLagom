@@ -366,7 +366,11 @@ function maakSectie(sectie, stijl) {
         if (!patroon) throw new Error('beweging= werkt alleen samen met patroon=');
         if (!BEWEGINGEN[beweging]) throw new Error(`beweging=${beweging} bestaat niet; kies ${Object.keys(BEWEGINGEN).join(' of ')}`);
         if (!(Number(tempo) > 0)) throw new Error(`beweging=${beweging} heeft een tempo nodig, bijvoorbeeld tempo=60 (seconden)`);
-        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // Alleen op een computer met muis: op telefoons en tablets haperde de animatie.
+        // (pointer: fine) is een muis of touchpad; een vinger is (pointer: coarse).
+        const metMuis = matchMedia('(pointer: fine)').matches;
+        const minderBeweging = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (metMuis && !minderBeweging) {
             maakBewegendPatroon(pad(patroon, sectie.basis), beweging, Number(tempo))
                 .then(url => element.style.setProperty('--patroon', `url("${url}")`))
                 .catch(fout => toonFout(fout.message));
