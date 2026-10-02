@@ -87,7 +87,10 @@ main > .rij:first-child .sectie { padding-top: calc(var(--menu-h) + var(--ruimte
    --patroonsterkte (sterkte=) vergroot of verkleint de stap.
    Voor schaal= wordt de laag kleiner gemaakt en daarna weer uitvergroot.
    De laag is geplaatst ten opzichte van de rij (niet de sectie), zodat hetzelfde patroon in
-   twee secties naast of onder elkaar naadloos doorloopt; clip-path van de sectie knipt hem af. */
+   twee secties naast of onder elkaar naadloos doorloopt; clip-path van de sectie knipt hem af.
+   mask-position legt de eerste tegel op de linkerrand van de rij. Zonder dat begint het
+   patroon bij left: -100vmax, en dan springt het mee met de schermhoogte (op een telefoon
+   verandert die tijdens het scrollen, als de adresbalk in- of uitklapt). */
 .patroon::before {
     content: '';
     position: absolute;
@@ -101,6 +104,7 @@ main > .rij:first-child .sectie { padding-top: calc(var(--menu-h) + var(--ruimte
     background: var(--patroonkleur, oklch(from var(--achtergrond)
         calc(l + clamp(-1, (0.62 - l) * 1000, 1) * 0.045 * var(--patroonsterkte, 1)) c h));
     mask: var(--patroon);
+    mask-position: calc(100vmax / var(--schaal, 1)) 0;
 }
 
 /* De kortste van twee secties blijft staan tijdens het scrollen (script.js zet .plakt) */
