@@ -56,8 +56,10 @@ a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickn
 /* ─── Rijen en secties ──────────────────────────────────── */
 main, .footer { overflow-x: clip; }   /* achtergronden lopen door tot de rand; niet verder */
 .breedte, .rij { width: min(var(--breedte), 100% - 2 * var(--marge)); margin-inline: auto; }
-.rij { display: grid; position: relative; }   /* ankerpunt voor patronen, zie .patroon::before */
-.rij.twee { grid-template-columns: calc(var(--deel, .5) * 100%) 1fr; }
+.rij { display: grid; grid-template-columns: minmax(0, 1fr); position: relative; }   /* ankerpunt voor patronen, zie .patroon::before */
+/* minmax(0, ...): een kolom mag smaller worden dan zijn inhoud. Met alleen 1fr groeit de kolom
+   mee met het breedste stuk inhoud (zoals het agendaformulier) en steekt hij buiten de rij. */
+.rij.twee { grid-template-columns: calc(var(--deel, .5) * 100%) minmax(0, 1fr); }
 
 .sectie {
     isolation: isolate;
@@ -260,7 +262,7 @@ a.knop { display: inline-block; background: var(--accent); color: var(--knopteks
 
 /* ─── Mobiel: secties onder elkaar, menu achter een knop ── */
 @media (max-width: 800px) {
-    .rij.twee { grid-template-columns: 1fr; }
+    .rij.twee { grid-template-columns: minmax(0, 1fr); }
     .twee > .sectie:is(:first-child, :last-child) { padding-inline: 0; clip-path: inset(0 -100vmax -1px); }
     main > .rij:first-child .sectie + .sectie { padding-top: var(--ruimte); }
     .footer > .rij:first-child .sectie + .sectie::after { content: none; }
