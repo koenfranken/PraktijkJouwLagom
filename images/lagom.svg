@@ -8,8 +8,6 @@
       <rect x="-3.6" y="3" width="7.2" height="2" rx="1"/>
     </g>
   </defs>
-  <g opacity=".25">
-    <use href="#balken" x="24" y="18"/>
-    <use href="#balken" x="72" y="54"/>
-  </g>
+  <use href="#balken" x="24" y="18"/>
+  <use href="#balken" x="72" y="54"/>
 </svg>
