@@ -143,10 +143,11 @@ a.knop, .menubalk nav a { padding: .45rem .9rem; border-radius: 6px; font-size: 
    de eerste in accentkleur, de volgende rustiger. */
 .knoppen { display: flex; flex-wrap: wrap; gap: .75rem; }
 a.knop { display: inline-block; background: var(--accent); color: var(--knoptekst); font-weight: 600; transition: filter .2s, background .2s; }
-.knop:hover { filter: brightness(.92); }
+/* Hover alleen met een muis: op een touchscreen blijft hover na een tik hangen */
+@media (hover: hover) { .knop:hover { filter: brightness(.92); } }
 /* De rand van een rustige knop is een schaduw aan de binnenkant, zodat de maat gelijk blijft */
 .knoppen .knop + .knop { background: transparent; color: var(--tekst); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--tekst) 30%, transparent); }
-.knoppen .knop + .knop:hover { background: color-mix(in srgb, var(--tekst) 8%, transparent); }
+@media (hover: hover) { .knoppen .knop + .knop:hover { background: color-mix(in srgb, var(--tekst) 8%, transparent); } }
 
 .kaarten { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
 .kaart {
@@ -191,18 +192,15 @@ a.knop { display: inline-block; background: var(--accent); color: var(--knopteks
     inset: 0 0 auto;
     z-index: 100;
     height: var(--menu-h);
-    background: color-mix(in srgb, var(--achtergrond) 90%, transparent);
-    backdrop-filter: blur(16px);
+    background: var(--achtergrond);
     border-bottom: 1px solid color-mix(in srgb, var(--tekst) 10%, transparent);
-    transition: box-shadow .3s;
 }
-.menubalk.gescrold { box-shadow: 0 12px 32px color-mix(in srgb, var(--tekst) 8%, transparent); }
 .menubalk .breedte { display: flex; align-items: center; justify-content: space-between; height: 100%; }
 .merk { display: flex; align-items: center; gap: .75rem; font: 1.3rem var(--font-koppen), Georgia, serif; color: var(--koppen); text-decoration: none; }
 .merk img { height: 44px; width: auto; border-radius: 0; }
 .menubalk ul { display: flex; gap: .25rem; padding: 0; list-style: none; }
 .menubalk nav a { display: block; font-weight: 500; }
-.menubalk nav a:not(.knop):hover { background: color-mix(in srgb, var(--accent) 20%, transparent); }
+@media (hover: hover) { .menubalk nav a:not(.knop):hover { background: color-mix(in srgb, var(--accent) 20%, transparent); } }
 .menubalk nav a.knop { margin-left: .5rem; font-weight: 600; }
 .menuknop { display: none; padding: .5rem; border: 0; background: none; cursor: pointer; }
 .menuknop span { display: block; width: 22px; height: 2px; margin: 5px 0; background: var(--tekst); transition: .3s; }
@@ -233,6 +231,7 @@ a.knop { display: inline-block; background: var(--accent); color: var(--knopteks
     --md-color-accent: var(--accent);
     --md-color-accent_text: var(--knoptekst);
 }
+.md-scheduler__box { box-shadow: none; }   /* plat, net als de rest van de pagina */
 /* Invoervelden minstens 16px: kleiner, en iOS zoomt in zodra je een veld aantikt.
    Dan lijkt het formulier breder dan het scherm. */
 .md-scheduler input,
@@ -262,6 +261,16 @@ a.knop { display: inline-block; background: var(--accent); color: var(--knopteks
     html { scroll-behavior: auto; }
     body *, *::before { animation: none !important; transition: none !important; }
     .js .reveal { opacity: 1; transform: none; }
+}
+
+/* ─── Printen: hetzelfde als op het scherm ───────────────── */
+@media print {
+    /* Browsers laten achtergrondkleuren standaard weg; lichte tekst wordt dan onleesbaar */
+    * { print-color-adjust: exact; }
+    /* Blokken die nog niet in beeld zijn geweest, zijn nog niet ingevaagd */
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    /* fixed herhaalt de menubalk op elke pagina, over de tekst heen; nu staat hij alleen bovenaan */
+    .menubalk { position: absolute; }
 }
 
 /* ─── Mobiel: secties onder elkaar, menu achter een knop ── */
