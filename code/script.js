@@ -561,7 +561,6 @@ async function laadTekst(adres) {
         maakAnkers();
         voerScriptsUit();
         openExterneLinksApart();
-        activeerMenu();
     } catch (fout) {
         toonFout(`De pagina kon niet geladen worden: ${fout.message}`);
     } finally {
@@ -574,7 +573,10 @@ async function laadTekst(adres) {
         });
         await Promise.race([fontsKlaar, new Promise(klaar => setTimeout(klaar, fontWacht))]);
 
+        // Pas na het wachten: activeerMenu en controleerPlakken meten de pagina, en dat dwingt
+        // de browser de opmaak uit te rekenen. Vóór de fonts er zijn, is dat dubbel werk.
         if (document.querySelector('.menubalk')) {
+            activeerMenu();
             controleerPlakken();
             addEventListener('resize', controleerPlakken);
             addEventListener('load', controleerPlakken);   // afbeeldingen kunnen de hoogte nog veranderen
