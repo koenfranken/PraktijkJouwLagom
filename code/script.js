@@ -316,7 +316,7 @@ function maakRij(rij, stijl) {
 // opnieuw, ook op posities tussen twee pixels in.
 // Elke beweging eindigt waar hij begon, zodat de herhaling naadloos is. tempo is in seconden:
 //   drijven   één tegel schuin opschuiven
-//   pulseren  één keer vervagen en weer terugkomen
+//   pulseren  vanuit onzichtbaar invagen en weer vervagen
 const BEWEGINGEN = {
     drijven(b, h, tempo) {
         // Het origineel staat er vier keer in (2×2); dat geheel schuift één tegel op.
@@ -328,7 +328,7 @@ const BEWEGINGEN = {
     },
     pulseren(b, h, tempo) {
         return `<use href="#tegel">
-            <animate attributeName="opacity" values="1;.15;1" keyTimes="0;.5;1" dur="${tempo}s" repeatCount="indefinite"
+            <animate attributeName="opacity" values="0;1;0" keyTimes="0;.5;1" dur="${tempo}s" repeatCount="indefinite"
                 calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
         </use>`;
     },
@@ -350,7 +350,8 @@ async function maakBewegendPatroon(bestand, beweging, tempo) {
 }
 
 function maakSectie(sectie, stijl) {
-    const { patroon, schaal, sterkte, beweging, tempo, uitlijning, id } = sectie.opties;
+    const { patroon, schaal, sterkte, beweging, tempo = 5, uitlijning, id } = sectie.opties;
+    // tempo = 5: zonder tempo= duurt één beweging 5 seconden
     const element = document.createElement('section');
     element.className = 'sectie';
     if (id) element.id = id;
@@ -365,7 +366,7 @@ function maakSectie(sectie, stijl) {
     if (beweging) {
         if (!patroon) throw new Error('beweging= werkt alleen samen met patroon=');
         if (!BEWEGINGEN[beweging]) throw new Error(`beweging=${beweging} bestaat niet; kies ${Object.keys(BEWEGINGEN).join(' of ')}`);
-        if (!(Number(tempo) > 0)) throw new Error(`beweging=${beweging} heeft een tempo nodig, bijvoorbeeld tempo=60 (seconden)`);
+        if (!(Number(tempo) > 0)) throw new Error(`tempo=${tempo} kan niet; geef een aantal seconden groter dan 0, bijvoorbeeld tempo=60`);
         // Alleen op een computer met muis: op telefoons en tablets haperde de animatie.
         // (pointer: fine) is een muis of touchpad; een vinger is (pointer: coarse).
         const metMuis = matchMedia('(pointer: fine)').matches;

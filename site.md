@@ -22,7 +22,7 @@ geel: #D8A032
 achtergrond: licht
 tekst: donker
 koppen: rood
-accent: geel
+accent: groen
 knoptekst: licht
 
 [thema groen]
