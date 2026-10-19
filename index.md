@@ -4,7 +4,7 @@ Homepagina
 [sectie]
 [label Orthomoleculaire therapie]
 # Precies genoeg, ==voor jou==.
-Orthomoleculaire therapie kijkt naar wat jouw lichaam nodig heeft: voeding, vitaminen, mineralen, beweging en ontspanning. Niet te veel, niet te weinig, balans. 
+Orthomoleculaire therapie kijkt naar wat een lichaam nodig heeft: voeding, vitaminen, mineralen, beweging en ontspanning. Niet te veel, niet te weinig, balans. 
 
 [Maak direct een afspraak](#agenda){.knop}
 [Liever eerst kennismaken](#contact){.knop}
@@ -22,7 +22,7 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 
 [kaart]
 ### Preventie
-APK, gezond ouder worden, gewichtsbeheersing, ondersteuning gewrichtsklachten, insuline resistentie
+APK, vitaal ouder worden, gewichtsbeheersing, ondersteuning gewrichtsklachten, insuline resistentie
 [kaart]
 ### Buik, darm, huid...
 Opgeblazen gevoel, (wisselende) buikpijn, gasvorming, diarree, obstipatie, PDS, IBD, huidklachten, Acne, histamineklachten, MCAS, voedingsintollerantie...
