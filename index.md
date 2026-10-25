@@ -21,7 +21,7 @@ Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en i
 [sectie thema=groen patroon=images/lagom.svg]
 [label Aanbod]
 ## Waar ik je mee help
-Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten — het werk doe je zelf, in jouw tempo.
+Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten, het werk doe je zelf, in jouw tempo.
 
 [kaart]
 ### Preventie
