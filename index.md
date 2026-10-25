@@ -116,7 +116,26 @@ Bushalte Doelenstraat op 100 meter
 Locatie kan worden gewijzigd naar:  
 Lange akker 29  
 5081 MR Hilvarenbeek  
+[rij]
+[sectie thema=rood patroon=images/stippen.svg]
+[label Contact]
+## Contactgegevens en openingstijden
 
+**Openingstijden**  
+Maandag 19.00 - 21.00  
+Woensdag 9.00 - 12.00  
+Vrijdag 9.00 - 16.00
+
+**Adres**  
+Centrum de Mens (Ingang via Gildelaan)  
+Tilburgseweg 2B  
+5081 XJ Hilvarenbeek  
+Bushalte Doelenstraat op 100 meter
+
+**Andere locatie en of ander tijdstip?  
+Neem dan contact op per mail of telefoon**  
+Lange Akker 29  
+5081 MR Hilvarenbeek
 
 [sectie thema=rood patroon=images/stippen.svg]
 [kaart]
