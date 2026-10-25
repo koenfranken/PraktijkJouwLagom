@@ -93,11 +93,9 @@ Ik ben Ellen Spijkers en woon in Hilvarenbeek. Hier woon ik samen met mijn man, 
 
 Zelf kwam ik met orthomoleculaire therapie in aanraking vanuit post-COVID klachten. Die ervaring sluit aan bij hoe ik werk: niet alleen klachten verzachten, maar via onderzoek zoeken naar de onderliggende oorzaak en het systeem dat daarbij hoort.
 
-- In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten — het werk doe je zelf, in jouw tempo.
-- **Niet te veel, niet te weinig**
 
 ### Opleiding en bijscholing
-- Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. Dit zijn bijscholingen variërend van congressen en dagopleidingen. 
+- Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. De bijscholingen variëren van congressen tot dagopleidingen, zoals: 
 - Voedingsgeneeskunde beurs 2024, 2025 en 2026
 - Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
 - Bijscholingen: Post-covid en Post viraal syndroom
