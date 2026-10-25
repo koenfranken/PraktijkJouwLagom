@@ -97,9 +97,18 @@ Zelf kwam ik met orthomoleculaire therapie in aanraking vanuit post-COVID klacht
 [sectie thema=rood patroon=images/stippen.svg]
 [label Contact]
 ## Contactgegevens en openingstijden
-Maandag 19.00 - 21.00 (Locatie Hilvarenbeek: Centrum de Mens)
-Woensdag 9.00 - 12.00 (Locatie Hilvarenbeek: Centrum de Mens)
-Vrijdag 9.00 - 16.00 (Locatie Hilvarenbeek: Centrum de Mens)
+Maandag 19.00 - 21.00 
+Woensdag 9.00 - 12.00 
+Vrijdag 9.00 - 16.00
+Centrum de Mens
+Tilburgseweg 2B
+5081 XJ Hilvarenbeek
+(Ingang via Gildelaan)
+Bushalte Doelenstraat op 100 meter 
+
+Locatie kan worden gewijzigd naar:
+Lange akker 29
+5081 MR Hilvarenbeek
 
 
 [sectie thema=rood patroon=images/stippen.svg]
