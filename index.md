@@ -22,7 +22,7 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 
 [kaart]
 ### Preventie
-APK, vitaal ouder worden, gewichtsbeheersing, ondersteuning gewrichtsklachten, insuline resistentie
+APK, vitaal ouder worden, gewichtsbeheersing, afvallen, spier- en gewrichtsklachten, insuline resistentie
 [kaart]
 ### Buik, darm, huid...
 Opgeblazen gevoel, (wisselende) buikpijn, gasvorming, diarree, obstipatie, PDS, IBD, huidklachten, Acne, histamineklachten, MCAS, voedingsintollerantie...
@@ -34,18 +34,22 @@ Post-covid, post-viraal klachten, vaak moe, snel of vaak ziek/verkouden, lang la
 [sectie]
 [label Werkwijze]
 ## Stap voor stap
-Elk traject begint met luisteren. Daarna maken we samen een plan en stellen dat bij waar nodig.
+Elk traject begint met luisteren, de intake. Daarna maken we samen een plan en stellen dat bij waar nodig. In een korte kennismaking stemmen we af of deze aanpak bij je past. 
 
 [Plan een kennismaking](#contact){.knop}
 
 [sectie]
 [tijdlijn Stap 1]
-### Kennismaking
-Een vrijblijvend gesprek van 15 minuten: wat speelt er, en past mijn aanpak bij jou?
+### Ondersteunende onderzoeken
+Tijdens het traject stemmen we af of verder onderzoek nodig is. Dit kan bijvoorbeeld een bloed- of ontlastingsonderzoek zijn. Hierbij maak ik gebruik van verschillende laboratoria zoals NL-Lab en LHM Diagnostiek. 
 
 [tijdlijn Stap 2]
-### Begeleiding
-Na de intake, plannen we één of meerdere vervolgconsulten kijken we wat werkt en stellen we het plan bij. Eventueel aangevuld met ontlastingsonderzoek of bijvoorbeeld bloedonderzoek.
+### Opleiding en bijscholing
+Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. Dit zijn bijscholingen variërend van congressen en dagopleidingen. 
+- Voedingsgeneeskunde beurs 2024, 2025 en 2026
+- Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
+- Bijscholingen: Post-covid en Post viraal syndroom
+- Kinderbuikjes
 
 [tijdlijn Stap 3]
 ### Advies op maat
@@ -82,7 +86,7 @@ Na de intake, plannen we één of meerdere vervolgconsulten kijken we wat werkt 
 [sectie]
 [label Over mij]
 ## Aandacht voor het geheel
-Ik ben Ellen Spijkers. Ik woon in Hilvarenbeek, samen met mijn man, onze twee kinderen en onze hond. In mijn vrije tijd ben ik graag buiten, bijvoorbeeld wandelend met de hond.
+Ik ben Ellen Spijkers en woon in Hilvarenbeek. Hier woon ik samen met mijn man, onze twee kinderen en hond. In mijn vrije tijd ben ik graag buiten, bijvoorbeeld wandelend met de hond.
 
 Zelf kwam ik met orthomoleculaire therapie in aanraking vanuit post-COVID klachten. Die ervaring sluit aan bij hoe ik werk: niet alleen klachten verzachten, maar via onderzoek zoeken naar de onderliggende oorzaak en het systeem dat daarbij hoort.
 
