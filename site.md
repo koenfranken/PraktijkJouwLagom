@@ -68,7 +68,7 @@ knoptekst: donker
 Orthomoleculaire therapie 
 
 [sectie thema=rood]
-KvK nummer: TBD
+KvK nummer: 42192338
 
 [Algemene voorwaarden](voorwaarden.html)
 
