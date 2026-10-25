@@ -6,6 +6,9 @@ Homepagina
 # Precies genoeg, ==voor jou==.
 Orthomoleculaire therapie kijkt naar wat een lichaam nodig heeft: voeding, vitaminen, mineralen, beweging en ontspanning. Niet te veel, niet te weinig, balans. 
 
+In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten — het werk doe je zelf, in jouw tempo.
+- **Niet te veel, niet te weinig**
+
 [Maak direct een afspraak](#agenda){.knop}
 [Liever eerst kennismaken](#contact){.knop}
 
@@ -93,22 +96,28 @@ Zelf kwam ik met orthomoleculaire therapie in aanraking vanuit post-COVID klacht
 - In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten — het werk doe je zelf, in jouw tempo.
 - **Niet te veel, niet te weinig**
 
+### Opleiding en bijscholing
+- Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. Dit zijn bijscholingen variërend van congressen en dagopleidingen. 
+- Voedingsgeneeskunde beurs 2024, 2025 en 2026
+- Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
+- Bijscholingen: Post-covid en Post viraal syndroom
+- Kinderbuikjes
+
 [rij]
 [sectie thema=rood patroon=images/stippen.svg]
 [label Contact]
 ## Contactgegevens en openingstijden
-Maandag 19.00 - 21.00 
-Woensdag 9.00 - 12.00 
-Vrijdag 9.00 - 16.00
-Centrum de Mens
-Tilburgseweg 2B
-5081 XJ Hilvarenbeek
-(Ingang via Gildelaan)
-Bushalte Doelenstraat op 100 meter 
-
-Locatie kan worden gewijzigd naar:
-Lange akker 29
-5081 MR Hilvarenbeek
+Maandag 19.00 - 21.00  
+Woensdag 9.00 - 12.00   
+Vrijdag 9.00 - 16.00  
+Centrum de Mens (Ingang via Gildelaan)  
+Tilburgseweg 2B  
+5081 XJ Hilvarenbeek  
+Bushalte Doelenstraat op 100 meter  
+  
+Locatie kan worden gewijzigd naar:  
+Lange akker 29  
+5081 MR Hilvarenbeek  
 
 
 [sectie thema=rood patroon=images/stippen.svg]
