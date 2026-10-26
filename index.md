@@ -36,29 +36,38 @@ Post-covid, post-viraal klachten, vaak moe, snel of vaak ziek/verkouden, lang kl
 [rij verhouding=1:2]
 [sectie]
 [label Werkwijze]
-## Stap voor stap
+## Zo werk ik
 Elk traject begint met luisteren, de intake. Daarna maken we samen een plan en stellen dat bij waar nodig. In een korte kennismaking stemmen we af of deze aanpak bij je past. 
 
 [Plan een kennismaking](#contact){.knop}
 
 [sectie]
-[tijdlijn Stap 1]
+[kaart]
 ### Ondersteunende onderzoeken
 Tijdens het traject stemmen we af of verder onderzoek nodig is. Dit kan bijvoorbeeld een bloed- of ontlastingsonderzoek zijn. Hierbij maak ik gebruik van verschillende laboratoria zoals NL-Lab en LHM Diagnostiek. 
 
-[tijdlijn Stap 2]
+[kaart]
 ### Opleiding en bijscholing
 Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. Dit zijn bijscholingen variërend van congressen en dagopleidingen. 
 - Voedingsgeneeskunde beurs 2024, 2025 en 2026
 - Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
-- Bijscholingen: Post-covid en Post viraal syndroom
-- Kinderbuikjes
+- Bijscholingen: Post-covid, Post viraal syndroom
+- Kinderbuikjes, 
 
-[tijdlijn Stap 3]
+[kaart]
 ### Advies op maat
 Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 
-[tijdlijn Stap 4]
+[kaart]
+### Tarieven en vergoeding
+- Intake 120 minuten € 125,-
+- Consult 60 minuten € 90,-
+- Consult 30 minuten € 45,-
+- Workshops op aanvraag.
+
+Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit na in jouw polisvoorwaarden.
+
+[kaart]
 ### Begeleiding
 Na de intake, plannen we één of meerdere vervolgconsulten kijken we wat werkt en stellen we het plan bij. Eventueel aangevuld met ontlastingsonderzoek of bijvoorbeeld bloedonderzoek.
 
@@ -109,14 +118,12 @@ Ik ben Ellen Spijkers en woon in Hilvarenbeek. Hier woon ik samen met mijn man, 
 
 Zelf kwam ik met orthomoleculaire therapie in aanraking vanuit post-COVID klachten. Die ervaring sluit aan bij hoe ik werk: niet alleen klachten verzachten, maar via onderzoek zoeken naar de onderliggende oorzaak en het systeem dat daarbij hoort.
 
-
-### Tarieven en vergoeding
-- Intake 120 minuten € 125,-
-- Consult 60 minuten € 90,-
-- Consult 30 minuten € 45,-
-- Workshops op aanvraag.
-
-Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit na in jouw polisvoorwaarden.
+### Opleiding en bijscholing
+Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. Dit zijn bijscholingen variërend van congressen en dagopleidingen. 
+- Voedingsgeneeskunde beurs 2024, 2025 en 2026
+- Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
+- Bijscholingen: Post-covid, Post viraal syndroom
+- Kinderbuikjes, 
 
 [rij]
 [sectie thema=rood patroon=images/stippen.svg]
