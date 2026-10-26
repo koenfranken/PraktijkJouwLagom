@@ -47,14 +47,6 @@ Elk traject begint met luisteren, de intake. Daarna maken we samen een plan en s
 Tijdens het traject stemmen we af of verder onderzoek nodig is. Dit kan bijvoorbeeld een bloed- of ontlastingsonderzoek zijn. Hierbij maak ik gebruik van verschillende laboratoria zoals NL-Lab en LHM Diagnostiek. 
 
 [kaart]
-### Opleiding en bijscholing
-Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. Dit zijn bijscholingen variërend van congressen en dagopleidingen. 
-- Voedingsgeneeskunde beurs 2024, 2025 en 2026
-- Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
-- Bijscholingen: Post-covid, Post viraal syndroom
-- Kinderbuikjes, 
-
-[kaart]
 ### Advies op maat
 Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 
