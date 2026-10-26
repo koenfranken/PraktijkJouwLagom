@@ -37,17 +37,22 @@ Post-covid, post-viraal klachten, vaak moe, snel of vaak ziek/verkouden, lang kl
 [sectie]
 [label Werkwijze]
 ## Zo werk ik
-Elk traject begint met luisteren, de intake. Daarna maken we samen een plan en stellen dat bij waar nodig. In een korte kennismaking stemmen we af of deze aanpak bij je past. 
+
+We beginnen met een korte kennismaking. Daarin kijken we samen of mijn aanpak bij je past.
+
+Elk traject start met luisteren: de intake. Ik neem de tijd om je klachten, je voeding en je leefstijl goed in beeld te brengen. Op basis daarvan maken we samen een plan dat past bij jouw dagelijks leven.
+
+In de vervolgconsulten kijken we wat werkt en stellen we het plan bij waar nodig. Soms geeft aanvullend onderzoek meer inzicht, bijvoorbeeld een bloed- of ontlastingsonderzoek. Dat bespreken we altijd eerst samen. Ik werk hiervoor met verschillende laboratoria, zoals NL-Lab in Leeuwarden en LHM Diagnostiek.
 
 [Plan een kennismaking](#contact){.knop}
 
 [sectie]
 [kaart]
-### Ondersteunende onderzoeken
-Tijdens het traject stemmen we af of verder onderzoek nodig is. Dit kan bijvoorbeeld een bloed- of ontlastingsonderzoek zijn. Hierbij maak ik gebruik van verschillende laboratoria zoals NL-Lab en LHM Diagnostiek. 
+###  Advies op maat
+Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 
 [kaart]
-### Advies op maat
+### Nader te bepalen
 Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 
 [kaart]
@@ -61,7 +66,7 @@ Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit n
 
 [kaart]
 ### Begeleiding
-Na de intake, plannen we één of meerdere vervolgconsulten kijken we wat werkt en stellen we het plan bij. Eventueel aangevuld met ontlastingsonderzoek of bijvoorbeeld bloedonderzoek.
+nader te bepalen
 
 [rij]
 [sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
