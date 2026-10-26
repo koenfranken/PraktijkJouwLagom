@@ -69,6 +69,22 @@ Na de intake, plannen we één of meerdere vervolgconsulten kijken we wat werkt 
 
 [sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
 [html]
+<style>
+  .md-scheduler .md-day.md-available {
+    background-color: #6F7D45 !important;
+    border-color: #6F7D45 !important;
+    color: #F7F4EE !important;
+  }
+  .md-scheduler .md-day.md-available:hover {
+    background-color: #5C6839 !important;
+    border-color: #5C6839 !important;
+  }
+  .md-scheduler .md-day.md-selected {
+    background-color: #4A5430 !important;
+    border-color: #4A5430 !important;
+    color: #F7F4EE !important;
+  }
+</style>
 <div class="md-scheduler" data-env="praktijkjouwlagom" data-language="nl"></div>
 <script>
 (function(doc, tag, id){
@@ -94,29 +110,18 @@ Ik ben Ellen Spijkers en woon in Hilvarenbeek. Hier woon ik samen met mijn man, 
 Zelf kwam ik met orthomoleculaire therapie in aanraking vanuit post-COVID klachten. Die ervaring sluit aan bij hoe ik werk: niet alleen klachten verzachten, maar via onderzoek zoeken naar de onderliggende oorzaak en het systeem dat daarbij hoort.
 
 
-### Opleiding en bijscholing
-- Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. De bijscholingen variëren van congressen tot dagopleidingen, zoals: 
-- Voedingsgeneeskunde beurs 2024, 2025 en 2026
-- Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
-- Bijscholingen: Post-covid en Post viraal syndroom
-- Kinderbuikjes
+### Tarieven en vergoeding
+- Intake 120 minuten € 125,-
+- Consult 60 minuten € 90,-
+- Consult 30 minuten € 45,-
+- Workshops op aanvraag.
+
+Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit na in jouw polisvoorwaarden.
 
 [rij]
 [sectie thema=rood patroon=images/stippen.svg]
 [label Contact]
-## Contactgegevens en openingstijden
-Maandag 19.00 - 21.00  
-Woensdag 9.00 - 12.00   
-Vrijdag 9.00 - 16.00  
 
-Centrum de Mens (Ingang via Gildelaan)  
-Tilburgseweg 2B  
-5081 XJ Hilvarenbeek  
-Bushalte Doelenstraat op 100 meter  
-  
-Locatie kan worden gewijzigd naar:  
-Lange akker 29  
-5081 MR Hilvarenbeek  
 
 [rij]
 [sectie thema=rood patroon=images/stippen.svg]
