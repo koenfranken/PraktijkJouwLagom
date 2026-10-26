@@ -137,7 +137,8 @@ function markdownNaarHtml(regels, basis) {
         open.regels.push(tekst);
     };
 
-    for (const regel of regels.map(r => r.trim())) {
+    for (const ruweRegel of regels) {
+        const regel = ruweRegel.trim();
         const kop = regel.match(/^(#{1,4})\s+(.+)$/);            // # Kop
         const label = regel.match(/^\[label\s+(.+)\]$/);         // [label Diensten]
         const punt = regel.match(/^[-*]\s+(.+)$/);               // - opsommingsteken
@@ -167,20 +168,29 @@ function markdownNaarHtml(regels, basis) {
         } else if (nummer) {
             voegToeAanBlok('ol', nummer[1]);
         } else if (citaat) {
-            voegToeAanBlok('blockquote', citaat[1]);
+            voegToeAanBlok('blockquote', markeerAfbreken(citaat[1], ruweRegel));
         } else if (knop) {
             voegToeAanBlok('knoppen', regel);
         } else {
-            voegToeAanBlok('p', regel);
+            voegToeAanBlok('p', markeerAfbreken(regel, ruweRegel));
         }
     }
     sluitBlok();
     return html.join('\n');
 }
 
+// Een regel die eindigt op \ of op twee spaties breekt af: de volgende regel begint op een
+// nieuwe regel, zonder nieuwe alinea (standaard markdown). Omdat trim() de spaties weghaalt,
+// kijken we naar de ruwe regel. Een afbrekende regel krijgt een \n; blokNaarHtml maakt er <br> van.
+function markeerAfbreken(tekst, ruweRegel) {
+    return /(\\| {2,})$/.test(ruweRegel) ? tekst.replace(/\\$/, '') + '\n' : tekst;
+}
+
 function blokNaarHtml({ soort, regels }, basis) {
     const lijstItems = () => regels.map(r => `<li>${opmaak(r, basis)}</li>`).join('');
-    const doorlopend = opmaak(regels.join(' '), basis);
+    // Regels lopen door met een spatie, behalve na een afbrekende regel (die eindigt op \n).
+    // De \n aan het eind van de laatste regel valt weg door trim(): een alinea eindigt toch al.
+    const doorlopend = opmaak(regels.join(' ').trim(), basis).replaceAll('\n ', '<br>\n');
 
     switch (soort) {
         case 'ul': return `<ul>${lijstItems()}</ul>`;
@@ -192,15 +202,16 @@ function blokNaarHtml({ soort, regels }, basis) {
     }
 }
 
-// Opmaak binnen een regel: afbeeldingen, links, **vet**, *cursief* en ==accent==.
+// Opmaak binnen een alinea: afbeeldingen, links, **vet**, *cursief* en ==accent==.
+// De s-vlag laat vet, cursief en accent ook over een afgebroken regel (\n) heen lopen.
 function opmaak(tekst, basis) {
     return ontsnap(tekst)
         .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, adres) => `<img src="${pad(adres, basis)}" alt="${alt}">`)
         .replace(/\[([^\]]+)\]\(([^)\s]+)\)(\{\.knop\})?/g, (_, tekst, adres, knop) =>
             `<a href="${pad(adres, basis)}"${knop ? ' class="knop"' : ''}>${tekst}</a>`)   // {.knop}: opgemaakt als knop
-        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.+?)\*/g, '<em>$1</em>')
-        .replace(/==(.+?)==/g, '<mark>$1</mark>');
+        .replace(/\*\*(.+?)\*\*/gs, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/gs, '<em>$1</em>')
+        .replace(/==(.+?)==/gs, '<mark>$1</mark>');
 }
 
 // Tekens die in HTML een betekenis hebben, worden gewone tekst.

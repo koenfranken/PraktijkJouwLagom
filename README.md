@@ -136,7 +136,15 @@ Een eigen patroon: een SVG met `width` en `height` (de tegelmaat), in één kleu
 | `[tijdlijn 2020 – heden]` | Item in een tijdlijn |
 | `[html]` … `[/html]` | Gewone HTML, bijvoorbeeld een agenda of formulier van een andere website. Beide markeringen alleen op een regel. Scripts erin worden uitgevoerd |
 
-Een kaart of tijdlijn-item loopt door tot de volgende `[markering]`. Een lege regel begint een nieuwe alinea.
+Een kaart of tijdlijn-item loopt door tot de volgende `[markering]`.
+
+Regels en alinea's werken zoals gewone markdown (en dus ook zo in de voorbeeldweergave van GitHub):
+
+| Je typt | Resultaat |
+|---|---|
+| Eén Enter | Tekst loopt door op dezelfde regel |
+| `\` aan het eind van de regel, dan Enter | Nieuwe regel, geen nieuwe alinea. Twee spaties in plaats van `\` werkt ook, maar die zie je niet |
+| Lege regel | Nieuwe alinea |
 
 Elke kop krijgt een anker: kleine letters, streepjes in plaats van spaties: `## 1. Definities` → `#1-definities`.
 
