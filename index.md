@@ -46,7 +46,6 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 - Lang klachten houden, niet goed herstellen 
 
 [rij verhouding=1:2]
-[sectie]
 
 [sectie]
 [label Werkwijze]
