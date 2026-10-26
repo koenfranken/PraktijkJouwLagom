@@ -28,28 +28,33 @@ Heb je klachten waar je maar niet vanaf komt, of wil je juist gezond en fit blij
 
 [kaart]
 ### Preventie
-- Gezondheids-APK
-- Vitaal en fit ouder worden
-- Afvallen of aankomen, zonder jojo-effect
-- Schommelende bloedsuiker of steeds trek in zoet
-- Insulineresistentie
-- Spier- en gewrichtsklachten
+• Gezondheids-APK\
+• Vitaal en fit ouder worden\
+• Afvallen of aankomen, zonder jojo-effect\
+• Schommelende bloedsuiker of steeds trek in zoet\
+• Insulineresistentie\
+• Spier- en gewrichtsklachten
 
 [kaart]
 ### Buik, darm en huid
-- Opgeblazen gevoel en winderigheid
-- (Wisselende) buikpijn
-- Diarree of verstopping
-- PDS, IBD, MCAS
-- Histamineklachten en voedingsintoleranties
-- Huidklachten en acne
+• Opgeblazen gevoel en winderigheid\
+• (Wisselende) buikpijn\
+• Diarree of verstopping\
+• PDS, IBD, MCAS\
+• Histamineklachten en voedingsintoleranties\
+• Huidklachten en acne
 
 [kaart]
 ### Immuunsysteem
-- Post-covid of post-virale klachten
-- Snel moe of vaak moe
-- Snel of vaak ziek of verkouden
-- Lang klachten houden of slecht herstellen
+• Post-covid of post-virale klachten\
+• Snel moe of vaak moe\
+• Snel of vaak ziek of verkouden\
+• Lang klachten houden of slecht herstellen
+
+[rij verhouding=1:2]
+[sectie]
+[label Werkwijze]
+## Zo werk ik
 
 [rij verhouding=1:2]
 [sectie]
