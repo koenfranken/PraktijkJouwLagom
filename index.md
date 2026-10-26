@@ -25,13 +25,27 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 
 [kaart]
 ### Preventie
-APK, vitaal ouder worden, gewichtsbeheersing, afvallen, spier- en gewrichtsklachten, insuline resistentie
+- APK
+- Vitaal ouder worden
+- Vitaal blijven
+- Gewichtsbeheersing: afvallen/aankomen
+- Spier- en gewrichtsklachten
+- Insuline resistentie
+  
 [kaart]
 ### Buik, darm, huid...
-Opgeblazen gevoel, (wisselende) buikpijn, gasvorming, diarree, obstipatie, PDS, IBD, huidklachten, Acne, histamineklachten, MCAS, voedingsintollerantie...
+- Opgeblazen gevoel, gasvorming
+- (wisselende) buikpijn
+- Diarree, obstipatie
+- PDS, IBD, MCAS, histamineklachten, voedingsintoleranties
+- Huidklachten, acne
+  
 [kaart]
 ### Immuunsysteem
-Post-covid, post-viraal klachten, vaak moe, snel of vaak ziek/verkouden, lang klachten houden, niet goed herstellen... 
+- Post-covid of post-viraal klachten
+- Vaak of snel moe
+- Snel of vaak ziek/verkouden
+- Lang klachten houden, niet goed herstellen 
 
 [rij verhouding=1:2]
 [sectie]
