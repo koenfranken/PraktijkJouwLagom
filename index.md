@@ -128,11 +128,6 @@ Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij O
 [rij]
 [sectie thema=rood patroon=images/stippen.svg]
 [label Contact]
-
-
-[rij]
-[sectie thema=rood patroon=images/stippen.svg]
-[label Contact]
 ## Contactgegevens en openingstijden
 
 **Openingstijden**\
