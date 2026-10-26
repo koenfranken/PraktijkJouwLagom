@@ -55,15 +55,12 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 We beginnen met een korte kennismaking. Daarin kijken we samen of mijn aanpak bij je past.
 
 Elk traject start met luisteren: de intake. Ik neem de tijd om je klachten, je voeding en je leefstijl goed in beeld te brengen. Op basis daarvan maken we samen een plan dat past bij jouw dagelijks leven.
-
-In de vervolgconsulten kijken we wat werkt en stellen we het plan bij waar nodig. Soms geeft aanvullend onderzoek meer inzicht, bijvoorbeeld een bloed- of ontlastingsonderzoek. Dat bespreken we altijd eerst samen. Ik werk hiervoor met verschillende laboratoria, zoals NL-Lab in Leeuwarden en LHM Diagnostiek.
-
 [Plan een kennismaking](#contact){.knop}
 
 [sectie]
 [kaart]
 ###  Advies op maat
-Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
+In de vervolgconsulten kijken we wat werkt en stellen we het plan bij waar nodig. Soms geeft aanvullend onderzoek meer inzicht, bijvoorbeeld een bloed- of ontlastingsonderzoek. Dat bespreken we altijd eerst samen. Ik werk hiervoor met verschillende laboratoria, zoals NL-Lab in Leeuwarden en LHM Diagnostiek. Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 
 [kaart]
 ### Nader te bepalen
