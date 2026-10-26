@@ -23,6 +23,38 @@ Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en i
 ## Waar ik je mee help
 Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten, het werk doe je zelf, in jouw tempo.
 
+## Waar ik je mee help
+Heb je klachten waar je maar niet vanaf komt, of wil je juist gezond en fit blijven? Samen zoeken we uit wat jouw lichaam nodig heeft.
+
+[kaart]
+### Preventie
+- Gezondheids-APK
+- Vitaal en fit ouder worden
+- Afvallen of aankomen, zonder jojo-effect
+- Schommelende bloedsuiker of steeds trek in zoet
+- Insulineresistentie
+- Spier- en gewrichtsklachten
+
+[kaart]
+### Buik, darm en huid
+- Opgeblazen gevoel en winderigheid
+- (Wisselende) buikpijn
+- Diarree of verstopping
+- PDS, IBD, MCAS
+- Histamineklachten en voedingsintoleranties
+- Huidklachten en acne
+
+[kaart]
+### Immuunsysteem
+- Post-covid of post-virale klachten
+- Snel moe of vaak moe
+- Snel of vaak ziek of verkouden
+- Lang klachten houden of slecht herstellen
+
+[rij verhouding=1:2]
+[sectie]
+[label Werkwijze]
+## Zo werk ik
 [kaart]
 ### Preventie
 - APK
