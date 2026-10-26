@@ -23,33 +23,15 @@ Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en i
 ## Waar ik je mee help
 Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten, het werk doe je zelf, in jouw tempo.
 
-## Waar ik je mee help
-Heb je klachten waar je maar niet vanaf komt, of wil je juist gezond en fit blijven? Samen zoeken we uit wat jouw lichaam nodig heeft.
-
 [kaart]
 ### Preventie
-• Gezondheids-APK\
-• Vitaal en fit ouder worden\
-• Afvallen of aankomen, zonder jojo-effect\
-• Schommelende bloedsuiker of steeds trek in zoet\
-• Insulineresistentie\
-• Spier- en gewrichtsklachten
-
+APK, vitaal ouder worden, gewichtsbeheersing, afvallen, spier- en gewrichtsklachten, insuline resistentie
 [kaart]
-### Buik, darm en huid
-• Opgeblazen gevoel en winderigheid\
-• (Wisselende) buikpijn\
-• Diarree of verstopping\
-• PDS, IBD, MCAS\
-• Histamineklachten en voedingsintoleranties\
-• Huidklachten en acne
-
+### Buik, darm, huid...
+Opgeblazen gevoel, (wisselende) buikpijn, gasvorming, diarree, obstipatie, PDS, IBD, huidklachten, Acne, histamineklachten, MCAS, voedingsintollerantie...
 [kaart]
 ### Immuunsysteem
-• Post-covid of post-virale klachten\
-• Snel moe of vaak moe\
-• Snel of vaak ziek of verkouden\
-• Lang klachten houden of slecht herstellen
+Post-covid, post-viraal klachten, vaak moe, snel of vaak ziek/verkouden, lang klachten houden, niet goed herstellen...
 
 [rij verhouding=1:2]
 [sectie]
@@ -68,15 +50,13 @@ Heb je klachten waar je maar niet vanaf komt, of wil je juist gezond en fit blij
 - Gewichtsbeheersing: afvallen/aankomen
 - Spier- en gewrichtsklachten
 - Insuline resistentie
-  
 [kaart]
 ### Buik, darm, huid...
 - Opgeblazen gevoel, gasvorming
 - (wisselende) buikpijn
 - Diarree, obstipatie
 - PDS, IBD, MCAS, histamineklachten, voedingsintoleranties
-- Huidklachten, acne
-  
+- Huidklachten, acne  
 [kaart]
 ### Immuunsysteem
 - Post-covid of post-viraal klachten
