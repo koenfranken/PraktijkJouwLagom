@@ -31,7 +31,6 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 - Gewichtsbeheersing: afvallen/aankomen
 - Spier- en gewrichtsklachten
 - Insuline resistentie
-
 [kaart]
 ### Buik, darm, huid...
 - Opgeblazen gevoel, gasvorming
@@ -39,7 +38,6 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 - Diarree, obstipatie
 - PDS, IBD, MCAS, histamineklachten, voedingsintoleranties
 - Huidklachten, acne  
-
 [kaart]
 ### Immuunsysteem
 - Post-covid of post-viraal klachten
