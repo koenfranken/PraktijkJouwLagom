@@ -118,7 +118,7 @@ Kun je onverhoopt niet komen? Laat het me dan uiterlijk 24 uur van tevoren weten
 
 [rij verhouding=1:2]
 [sectie]
-![Portret](images/portret.svg)
+![Ellen Spijkers, orthomoleculair therapeut in Hilvarenbeek](images/ellen-ruimer.jpg)
 
 [sectie]
 [label Over mij]
