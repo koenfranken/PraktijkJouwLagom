@@ -68,7 +68,8 @@ knoptekst: donker
 Orthomoleculaire therapie 
 
 [sectie thema=rood]
-KvK nummer: 42192338
+KvK 42192338\
+Btw-id NL005573778B09
 
 [Algemene voorwaarden](voorwaarden.html)
 
