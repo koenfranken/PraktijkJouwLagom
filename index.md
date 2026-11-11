@@ -20,7 +20,7 @@ Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en i
 [rij]
 [sectie thema=groen patroon=images/lagom.svg]
 [label Aanbod]
-## Waar ik je mee help
+## Ondersteuning bij jouw hulpvraag
 Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en leefstijl. Ik bied advies en handvatten, het werk doe je zelf, in jouw tempo.
 
 [kaart]
@@ -35,7 +35,7 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 ### Buik, darm, huid...
 - Opgeblazen gevoel, gasvorming
 - (wisselende) buikpijn
-- Diarree, obstipatie
+- Diarree, obstipatie, wisselende ontlasting
 - PDS, IBD, MCAS, histamineklachten, voedingsintoleranties
 - Huidklachten, acne  
 [kaart]
@@ -49,7 +49,7 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 
 [sectie]
 [label Werkwijze]
-## Zo werk ik
+## Mijn werkwijze
 
 We beginnen met een korte kennismaking. Daarin kijken we samen of mijn aanpak bij je past.
 
@@ -59,24 +59,26 @@ Elk traject start met luisteren: de intake. Ik neem de tijd om je klachten, je v
 [sectie]
 [kaart]
 ###  Advies op maat
-In de vervolgconsulten kijken we wat werkt en stellen we het plan bij waar nodig. Soms geeft aanvullend onderzoek meer inzicht, bijvoorbeeld een bloed- of ontlastingsonderzoek. Dat bespreken we altijd eerst samen. Ik werk hiervoor met verschillende laboratoria, zoals NL-Lab in Leeuwarden en LHM Diagnostiek. Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
+In de vervolgconsulten kijken we wat werkt en stellen we het plan bij waar nodig. Soms geeft aanvullend onderzoek meer inzicht, bijvoorbeeld een bloed- of ontlastingsonderzoek. Dat bespreken we altijd eerst samen. Ik maak gebruik van verschillende laboratoria, zoals NL-Lab (Leeuwarden) en LHM Diagnostiek. Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
 
 [kaart]
-### Nader te bepalen
-Je krijgt een concreet plan voor voeding, suppletie en leefstijl.
+### Begeleiding
+De begeleiding stemmen we samen af. Soms is een korte terugkoppeling per mail of whatsapp voldoende. Maar ook een uitgebreid verslag is mogelijk. De afspraak is op locatie, maar kan desgewenst via een beveiligde verbinding online.
+
 
 [kaart]
 ### Tarieven en vergoeding
 - Intake 120 minuten € 125,-
 - Consult 60 minuten € 90,-
 - Consult 30 minuten € 45,-
+- Uitgebreid verslag op verzoek berekend per kwartier,
 - Workshops op aanvraag.
 
-Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit na in jouw polisvoorwaarden.
+Wil je een uitgebreid schriftelijk verslag, bijvoorbeeld voor je huisarts of specialist? Dat maak ik graag voor je. Omdat dit (soms) buiten het consult valt, breng ik de tijd die ik eraan besteed in rekening tegen het uurtarief van € 90,-.
 
-[kaart]
-### Begeleiding
-nader te bepalen
+Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit na in jouw polisvoorwaarden. 
+
+Kun je onverhoopt niet komen? Laat het me dan uiterlijk 24 uur van tevoren weten. Dan kan ik de tijd aan iemand anders geven. Bij later afzeggen of niet verschijnen breng ik 50% van het tarief in rekening. 
 
 [rij]
 [sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
