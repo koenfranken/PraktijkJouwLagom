@@ -158,8 +158,9 @@ Lange Akker 29\
 [sectie thema=rood patroon=images/stippen.svg]
 [kaart]
 ### E-mail
-[a.b@c.com](mailto:a.b@c.com)
+[a.b@c.com](mailto:info@PraktijkJouwLagom.nl)
 
 [kaart]
 ### Telefoon
 06 – 30780219
+
