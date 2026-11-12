@@ -172,9 +172,9 @@ Lange Akker 29\
 [kaart]
 ### Aangesloten bij
 [html]
-<div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap; background:#F7F4EE; padding:12px 16px; border-radius:8px;">
-  <img src="images/MBOG-logo.jpg" alt="Lid van MBOG" style="height:50px; width:auto;">
-  <img src="images/RBZ-logo_CMYK_payoff.jpg" alt="Geregistreerd bij RBCZ" style="height:50px; width:auto;">
+<div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+  <img src="images/MBOG_beeldmerk.png" alt="Lid van MBOG" style="height:50px; width:auto;">
+  <img src="images/RBCZ-logo.png" alt="Geregistreerd bij RBCZ" style="height:50px; width:auto;">
   <img src="images/SCAG_LOGO.png" alt="Aangesloten bij SCAG" style="height:50px; width:auto;">
 </div>
 [/html]
