@@ -79,6 +79,8 @@ Wil je een uitgebreid schriftelijk verslag, bijvoorbeeld voor je huisarts of spe
 Kun je onverhoopt niet komen? Laat het me dan uiterlijk 48 uur van tevoren weten. Dan kan ik de tijd aan iemand anders geven. Bij later afzeggen of niet verschijnen breng ik 50% van het tarief in rekening. 
 Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit na in jouw polisvoorwaarden. 
 
+
+[kaart]
 ### Vergoeding
 Orthomoleculaire therapie wordt door verschillende zorgverzekeraars (gedeeltelijk) vergoed vanuit de aanvullende verzekering. Bekijk wat jouw verzekeraar vergoedt via [de vergoedingscheck van MBOG](LINK-MBOG).
 
