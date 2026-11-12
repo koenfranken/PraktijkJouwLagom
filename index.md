@@ -174,7 +174,7 @@ Lange Akker 29\
 [html]
 <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
   <img src="images/MBOG_beeldmerk.png" alt="Lid van MBOG" style="height:50px; width:auto;">
-  <img src="images/RBCZ-logo.png" alt="Geregistreerd bij RBCZ" style="height:50px; width:auto;">
+  <img src="images/RBCZ-logo_CMYK_payoff.png" alt="Geregistreerd bij RBCZ" style="height:50px; width:auto;">
   <img src="images/SCAG_LOGO.png" alt="Aangesloten bij SCAG" style="height:50px; width:auto;">
 </div>
 [/html]
