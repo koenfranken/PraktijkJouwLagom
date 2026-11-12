@@ -76,9 +76,14 @@ De begeleiding stemmen we samen af. Soms is een korte terugkoppeling per mail of
 
 Wil je een uitgebreid schriftelijk verslag, bijvoorbeeld voor je huisarts of specialist? Dat maak ik graag voor je. Omdat dit (soms) buiten het consult valt, breng ik de tijd die ik eraan besteed in rekening tegen het uurtarief van € 90,-.
 
+Kun je onverhoopt niet komen? Laat het me dan uiterlijk 48 uur van tevoren weten. Dan kan ik de tijd aan iemand anders geven. Bij later afzeggen of niet verschijnen breng ik 50% van het tarief in rekening. 
 Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit na in jouw polisvoorwaarden. 
 
-Kun je onverhoopt niet komen? Laat het me dan uiterlijk 24 uur van tevoren weten. Dan kan ik de tijd aan iemand anders geven. Bij later afzeggen of niet verschijnen breng ik 50% van het tarief in rekening. 
+### Vergoeding
+Orthomoleculaire therapie wordt door verschillende zorgverzekeraars (gedeeltelijk) vergoed vanuit de aanvullende verzekering. Bekijk wat jouw verzekeraar vergoedt via [de vergoedingscheck van MBOG](LINK-MBOG).
+
+### Klachten
+Ben je ergens niet tevreden over? Bespreek het gerust eerst met mij. Komen we er samen niet uit, dan kun je terecht bij een onafhankelijke klachtenfunctionaris van SCAG. Kijk voor meer informatie op [scag.nl](https://www.scag.nl).
 
 [rij]
 [sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
@@ -164,3 +169,12 @@ Lange Akker 29\
 ### Telefoon
 06 – 30780219
 
+[kaart]
+### Aangesloten bij
+[html]
+<div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap; background:#F7F4EE; padding:12px 16px; border-radius:8px;">
+  <img src="images/MBOG-logo.jpg" alt="Lid van MBOG" style="height:50px; width:auto;">
+  <img src="images/RBZ-logo_CMYK_payoff.jpg" alt="Geregistreerd bij RBCZ" style="height:50px; width:auto;">
+  <img src="images/SCAG_LOGO.png" alt="Aangesloten bij SCAG" style="height:50px; width:auto;">
+</div>
+[/html]
