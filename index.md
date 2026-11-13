@@ -22,7 +22,7 @@ In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en 
 </div>
 [/html]
 
-> **lagom** *(Zweeds)*: precies genoeg; niet te veel, niet te weinig, om balans en harmonie in tevredenheid te bereiken.
+> **lagom** *(Zweeds)*: precies genoeg; niet te veel, niet te weinig, in balans en harmonie.
 
 Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en iedereen nam net genoeg, zodat er voor iedereen was.
 
