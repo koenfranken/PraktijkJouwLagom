@@ -13,7 +13,16 @@ In mijn praktijk kijken we samen naar jouw behoefte, te beginnen bij voeding en 
 [Liever eerst kennismaken](#contact){.knop}
 
 [sectie patroon=images/molecuulnet-blad.svg schaal=1.5 uitlijning=onder beweging=drijven tempo=60]
-> **lagom** *(Zweeds)*: precies genoeg; niet te veel, niet te weinig.
+[html]
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; margin-bottom:24px;">
+  <iframe src="https://player.vimeo.com/video/294333565"
+    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+    title="Wat is orthomoleculaire therapie?"></iframe>
+</div>
+[/html]
+
+> **lagom** *(Zweeds)*: precies genoeg; niet te veel, niet te weinig, om balans en harmonie in tevredenheid te bereiken.
 
 Volgens een volksverhaal komt het van *laget om*: de kom ging de kring rond en iedereen nam net genoeg, zodat er voor iedereen was.
 
@@ -87,10 +96,12 @@ Orthomoleculaire therapie wordt door verschillende zorgverzekeraars (gedeeltelij
 ### Klachten
 Ben je ergens niet tevreden over? Bespreek het gerust eerst met mij. Komen we er samen niet uit, dan kun je terecht bij een onafhankelijke klachtenfunctionaris van SCAG. Kijk voor meer informatie op [scag.nl](https://www.scag.nl).
 
-[rij verhouding=2:1]
+[rij]
 [sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
 [label Agenda]
 ## Plan een afspraak
+
+[sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
 [html]
 <style>
   .md-scheduler .md-day.md-available {
@@ -120,18 +131,9 @@ Ben je ergens niet tevreden over? Bespreek het gerust eerst met mij. Komen we er
 }(document, 'script', 'md-scheduler-script'));
 </script>
 [/html]
-
+[rij verhouding=2:1]
 [sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
-[kaart]
-### Wat is orthomoleculaire therapie?
-[html]
-<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
-  <iframe src="https://player.vimeo.com/video/294333565"
-    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-    title="Wat is orthomoleculaire therapie?"></iframe>
-</div>
-[/html]
+[label Agenda]
 
 [rij verhouding=1:2]
 [sectie]
