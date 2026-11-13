@@ -28,7 +28,7 @@ Van een eerste gesprek tot een plan dat in je dagelijks leven past. In mijn prak
 - APK
 - Vitaal ouder worden
 - Vitaal blijven
-- Gewichtsbeheersing: afvallen/aankomen
+- Gezond(er) gewicht, afvallen, aankomen
 - Spier- en gewrichtsklachten
 - Insuline resistentie
 [kaart]
@@ -82,17 +82,15 @@ Verschillende zorgverzekeraars bieden een (gedeeltelijke) vergoeding. Lees dit n
 
 [kaart]
 ### Vergoeding
-Orthomoleculaire therapie wordt door verschillende zorgverzekeraars (gedeeltelijk) vergoed vanuit de aanvullende verzekering. Bekijk wat jouw verzekeraar vergoedt via [de vergoedingscheck van MBOG](LINK-MBOG).
+Orthomoleculaire therapie wordt door verschillende zorgverzekeraars (gedeeltelijk) vergoed vanuit de aanvullende verzekering. Bekijk wat jouw verzekeraar vergoedt via [de vergoedingscheck van MBOG]([LINK-MBOG](https://mbog.nl/wp-content/uploads/2026/03/MBOG-Vergoedingen-Zorgverzekeraars-2026.2-1.pdf)).
 
 ### Klachten
 Ben je ergens niet tevreden over? Bespreek het gerust eerst met mij. Komen we er samen niet uit, dan kun je terecht bij een onafhankelijke klachtenfunctionaris van SCAG. Kijk voor meer informatie op [scag.nl](https://www.scag.nl).
 
-[rij]
+[rij verhouding=2:1]
 [sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
 [label Agenda]
 ## Plan een afspraak
-
-[sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
 [html]
 <style>
   .md-scheduler .md-day.md-available {
@@ -123,6 +121,18 @@ Ben je ergens niet tevreden over? Bespreek het gerust eerst met mij. Komen we er
 </script>
 [/html]
 
+[sectie thema=geel patroon=images/honingraat.svg schaal=1.5]
+[kaart]
+### Wat is orthomoleculaire therapie?
+[html]
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
+  <iframe src="https://player.vimeo.com/video/294333565"
+    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+    title="Wat is orthomoleculaire therapie?"></iframe>
+</div>
+[/html]
+
 [rij verhouding=1:2]
 [sectie]
 ![Ellen Spijkers, orthomoleculair therapeut in Hilvarenbeek](images/ellen-ruimer.jpg)
@@ -138,8 +148,8 @@ Zelf kwam ik met orthomoleculaire therapie in aanraking vanuit post-COVID klacht
 Naast de afgeronde 4-jarige Beroepsopleiding tot Orthomoleculair therapeut bij Ortho Linea (Nijmegen), volg ik continue bijscholingen. Dit zijn bijscholingen variërend van congressen en dagopleidingen. 
 - Voedingsgeneeskunde beurs 2024, 2025 en 2026
 - Academische darmopleiding 4 + 5 dagen, NL-Lab Leeuwwarden
-- Bijscholingen: Post-covid, Post viraal syndroom
-- Kinderbuikjes, 
+- Bijscholingen: Post-covid syndroom, Post viraal syndroom
+- Kinderbuikjes, MCAS, en meer.
 
 [rij]
 [sectie thema=rood patroon=images/stippen.svg]
